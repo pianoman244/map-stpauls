@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_shield_white</title>
+    <g id="Desktop---Admission-&amp;-Aid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Admission-&amp;-Aid---Landing-Page" transform="translate(-66.000000, -573.000000)">
+            <g id="breadcrumb_white" transform="translate(66.000000, 571.000000)">
+                <g id="icon_shield_white" transform="translate(0.000000, 2.000000)">
+                    <rect id="viewbox" x="0" y="0" width="15" height="15"></rect>
+                    <path d="M2,2 L13,2 L13,4.9136939 C13,7.50978136 12.5616967,9.16685846 11.4164524,10.8239356 C10.4832905,12.1772152 9.35218509,13.1024166 7.5,14 C5.64781491,13.1024166 4.51670951,12.1772152 3.58354756,10.8239356 C2.43830334,9.16685846 2,7.50978136 2,4.9136939 L2,2 Z" id="Fill-1" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
