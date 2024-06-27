@@ -3,8 +3,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvb
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/pianoman24/clxcb94sn09r301ql605egwtc',
-    center: [-71.579588, 43.192937],
-    zoom: 15.12 // starting zoom
+    center: [-71.58, 43.190409], // default center [lng, lat]
+    zoom: 13.78, // default zoom
+    pitch: 0,
+    bearing: 0
 });
 
 
@@ -45,6 +47,7 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
 
 
             data.features.forEach((feature, index) => {
+                console.log("building legend");
                 const blaze = feature.properties.blaze || '#006400';
                 const name = feature.properties.name || 'Unknown';
                 const letter = String.fromCharCode(65 + index); // Generate letters A, B, C, etc.
@@ -222,3 +225,14 @@ map.on('click', (e) => {
         selectedTrail = null;
     }
 });
+
+// Function to reset map to default location and zoom
+function resetMap() {
+    map.flyTo({
+        center: [-71.58, 43.190409], // default center [lng, lat]
+        zoom: 13.78, // default zoom
+        pitch: 0,
+        bearing: 0,
+        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+}
