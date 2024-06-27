@@ -2,7 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvb
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/pianoman24/clxddq2my002c01qo8oc10owh',
+    style: 'mapbox://styles/pianoman24/clxcb94sn09r301ql605egwtc',
     center: [-71.579588, 43.192937],
     zoom: 15.12 // starting zoom
 });
@@ -38,6 +38,51 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
                 }
             });
             console.log('added trail layer');
+
+            // Create a legend
+            const legend = document.getElementById('legend');
+            const trails = {};
+
+
+            data.features.forEach((feature, index) => {
+                const blaze = feature.properties.blaze || '#006400';
+                const name = feature.properties.name || 'Unknown';
+                const letter = String.fromCharCode(65 + index); // Generate letters A, B, C, etc.
+
+                if (!trails[name]) {
+                    trails[name] = blaze;
+
+                    const item = document.createElement('div');
+                    item.className = 'legend-item';
+                    item.dataset.name = name;
+                    item.innerHTML = `
+            <div class="legend-color" style="color: ${blaze};">
+                <!-- <span>${letter}</span> -->
+            </div>
+            <div>${name}</div>
+        `;
+                    legend.appendChild(item);
+                }
+            });
+
+            map.addLayer({
+                'id': 'trail-labels',
+                'type': 'symbol',
+                'source': 'trails',
+                'layout': {
+                    'symbol-placement': 'line',
+                    'text-field': ['get', 'name'], // Assuming 'label' is the property containing the letter
+                    'text-size': 12,
+                    'text-font': ['Roboto Bold'], // Use the desired font
+                    'text-keep-upright': true
+                },
+                'paint': {
+                    'text-color': 'black',
+                    'text-halo-color': 'white',
+                    'text-halo-width': 1
+                }
+            });
+
 
             /*
                         // Extract start and end points from the trails
@@ -101,6 +146,11 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
         console.error('Error loading the GeoJSON data:', error);
     });
 
+
+
+let selectedTrail = null;
+
+// Add interactive pop-ups for trails
 map.on('click', 'trail-layer', (e) => {
     const properties = e.features[0].properties;
     const coordinates = e.lngLat;
@@ -118,14 +168,57 @@ map.on('click', 'trail-layer', (e) => {
         .setLngLat(coordinates)
         .setHTML(popupContent)
         .addTo(map);
+
+    // Highlight the selected trail in the legend
+    const name = properties.name || 'Unknown';
+    const legendItems = document.getElementsByClassName('legend-item');
+
+    // Remove highlight from previously selected item
+    if (selectedTrail) {
+        selectedTrail.classList.remove('highlight-selected');
+    }
+
+    for (let item of legendItems) {
+        if (item.dataset.name === name) {
+            item.classList.add('highlight-selected');
+            selectedTrail = item; // Keep track of the selected trail
+        }
+    }
 });
 
-// Change the cursor to a pointer when the mouse is over the trail layer
-map.on('mouseenter', 'trail-layer', () => {
+// Change the cursor to a pointer when the mouse is over the trail layer and highlight the legend item
+map.on('mouseenter', 'trail-layer', (e) => {
     map.getCanvas().style.cursor = 'pointer';
+
+    const properties = e.features[0].properties;
+    const name = properties.name || 'Unknown';
+    const legendItems = document.getElementsByClassName('legend-item');
+
+    for (let item of legendItems) {
+        if (item.dataset.name === name) {
+            item.classList.add('highlight');
+        }
+    }
 });
 
-// Change the cursor back when it leaves the trail layer
+// Change the cursor back and remove highlight when it leaves the trail layer
 map.on('mouseleave', 'trail-layer', () => {
     map.getCanvas().style.cursor = '';
+
+    const legendItems = document.getElementsByClassName('legend-item');
+    for (let item of legendItems) {
+        item.classList.remove('highlight');
+    }
+});
+
+// Deselect trail when clicking off the trail
+map.on('click', (e) => {
+    const features = map.queryRenderedFeatures(e.point, {
+        layers: ['trail-layer']
+    });
+
+    if (features.length === 0 && selectedTrail) {
+        selectedTrail.classList.remove('highlight-selected');
+        selectedTrail = null;
+    }
 });

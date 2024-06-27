@@ -2155,6 +2155,74 @@
               <div id="map-section-container">
                 <div id="map-section">
                   <div id="map"></div>
+                  <div id="legend"></div>
+                  <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+                    #legend {
+                      position: absolute;
+                      top: 10px;
+                      right: 10px;
+                      background: #efefef;
+                      /* White background for modern look */
+                      padding: 15px;
+                      border-radius: 8px;
+                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                      font-family: 'Roboto', sans-serif;
+                      /* Modern font */
+                      font-size: 14px;
+                      color: #333333;
+                      /* Darker text color */
+                    }
+
+                    .legend-item {
+                      display: flex;
+                      align-items: center;
+                      margin-bottom: 10px;
+                    }
+
+                    .legend-color {
+                      width: 40px;
+                      height: 3px;
+                      /* Smaller height for modern look */
+                      margin-right: 10px;
+                      background-color: currentColor;
+                      border-top: 4px solid currentColor;
+                      /* Top border for thicker line */
+                    }
+
+                    .legend-color.dotted {
+                      border-top: 4px dotted currentColor;
+                    }
+
+                    .legend-color.dashed {
+                      border-top: 4px dashed currentColor;
+                    }
+
+                    .legend-label {
+                      flex: 1;
+                      /* Make the label take the remaining space */
+                      font-weight: 400;
+                      /* Regular weight for modern look */
+                    }
+
+                    .legend-label strong {
+                      font-weight: 700;
+                      /* Bold for emphasis */
+                    }
+
+                    .highlight {
+                      background-color: rgba(0, 123, 255, 0.1);
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                      border-radius: 3px;
+                    }
+
+                    .highlight-selected {
+                      background-color: rgba(0, 123, 255, 0.3);
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                      border-radius: 3px;
+                    }
+                  </style>
                 </div>
                 <script src="maps/main.js"></script>
               </div>
