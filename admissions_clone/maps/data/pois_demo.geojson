@@ -1,0 +1,96 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.540500, 43.210000]
+        },
+        "properties": {
+          "name": "Main Trailhead",
+          "description": "Primary entrance to the trail network.",
+          "type": "Trailhead",
+          "author": "St. Paul's School",
+          "year_installed": 2005,
+          "condition": "Good"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.542300, 43.211200]
+        },
+        "properties": {
+          "name": "Secondary Trailhead",
+          "description": "Secondary entrance with limited parking.",
+          "type": "Trailhead",
+          "author": "St. Paul's School",
+          "year_installed": 2010,
+          "condition": "Fair"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.543800, 43.208800]
+        },
+        "properties": {
+          "name": "Flora and Fauna Sign",
+          "description": "Information about the local plants and wildlife.",
+          "type": "Educational Sign",
+          "author": "St. Paul's School Environmental Club",
+          "year_installed": 2015,
+          "condition": "Good"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.545100, 43.209900]
+        },
+        "properties": {
+          "name": "Geological History Sign",
+          "description": "Educational content about the geological formations visible from this point.",
+          "type": "Educational Sign",
+          "author": "New Hampshire Geological Society",
+          "year_installed": 2017,
+          "condition": "Excellent"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.546500, 43.207500]
+        },
+        "properties": {
+          "name": "Old Stone Wall",
+          "description": "Remnants of an old farm boundary wall from the 1800s.",
+          "type": "Historical Marker",
+          "author": "Concord Historical Society",
+          "year_installed": 1850,
+          "condition": "Poor"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-71.548000, 43.206300]
+        },
+        "properties": {
+          "name": "Former Homestead Site",
+          "description": "Site of a former homestead from the 19th century.",
+          "type": "Historical Marker",
+          "author": "Concord Historical Society",
+          "year_installed": 1820,
+          "condition": "Ruins"
+        }
+      }
+    ]
+  }
+  

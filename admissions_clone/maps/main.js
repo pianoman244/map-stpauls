@@ -13,14 +13,18 @@ const map = new mapboxgl.Map({
 fetch('http://localhost:8000/maps/data/trails_demo.geojson')
     .then(response => response.json())
     .then(data => {
-        console.log('fetched data');
         // Add the trail data as a source
         map.on('load', () => {
-            console.log('map loaded');
             map.addSource('trails', {
                 type: 'geojson',
                 data: data // Use the fetched GeoJSON data
             });
+
+            /*
+            map.addSource('observatory-trails', {
+                type: 'geojson',
+                data: "http://localhost:8000/maps/data/observatory_trails.geojson" // Use the fetched GeoJSON data
+            });*/
 
             map.addLayer({
                 'id': 'trail-layer',
@@ -32,14 +36,57 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
                 },
                 'paint': {
                     'line-color': [
-                        'coalesce',
-                        ['get', 'blaze'],
-                        '#002100' // Dark green as the default color
+                        'case',
+                        ['any', ['==', ['get', 'blaze'], 'none'], ['!', ['has', 'name']]], '#4F85F6', // Set color manually for "none"
+                        ['has', 'blaze'], ['get', 'blaze'], // Use the attribute value if it exists
+                        '#004200' // Default color for features without the tag
                     ],
-                    'line-width': 4
-                }
+                    'line-width': [
+                        'case',
+                        ['any', ['==', ['get', 'informal'], 'yes'], ['!', ['has', 'name']]],
+                        2, // Line width for informal trails or when 'name' is not present
+                        4  // Line width for formal trails
+                    ],
+                    'line-dasharray': [
+                        'case',
+                        ['any', ['==', ['get', 'informal'], 'yes'], ['!', ['has', 'name']]],
+                        [2, 2], // Dotted line pattern for informal trails
+                        [1, 0]  // Solid line pattern for formal trails
+                    ]
+                },
+                'filter': ['all',
+                    ['!=', ['get', 'trail_type'], 'streamed']
+                ]
             });
-            console.log('added trail layer');
+
+            /*
+            map.addLayer({
+                'id': 'observatory-layer',
+                'type': 'line',
+                'source': 'observatory-trails',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#000000',
+                    'line-width': [
+                        'case',
+                        ['==', ['get', 'informal'], 'yes'],
+                        4, // Dotted line pattern for informal trails
+                        2  // Solid line pattern for formal trails
+                    ],
+                    'line-dasharray': [
+                        'case',
+                        ['==', ['get', 'informal'], 'yes'],
+                        [2, 2], // Dotted line pattern for informal trails
+                        [1, 0]  // Solid line pattern for formal trails
+                    ]
+                },
+                'filter': ['all',
+                    ['!=', ['get', 'trail_type'], 'streamed']
+                ]
+            });*/
 
             // Create a legend
             const legend = document.getElementById('legend');
@@ -52,102 +99,104 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
                 const name = feature.properties.name || 'Unknown';
                 const letter = String.fromCharCode(65 + index); // Generate letters A, B, C, etc.
 
-                if (!trails[name]) {
-                    trails[name] = blaze;
+                if (feature.properties.name && feature.properties.informal !== 'yes') {
+                    if (!trails[name]) {
+                        trails[name] = blaze;
 
-                    const item = document.createElement('div');
-                    item.className = 'legend-item';
-                    item.dataset.name = name;
-                    item.innerHTML = `
-            <div class="legend-color" style="color: ${blaze};">
-                <!-- <span>${letter}</span> -->
-            </div>
-            <div>${name}</div>
-        `;
-                    legend.appendChild(item);
+                        const item = document.createElement('div');
+                        item.className = 'legend-item';
+                        item.dataset.name = name;
+                        item.innerHTML = `
+                <div class="legend-color" style="color: ${blaze};">
+                    <!-- <span>${letter}</span> -->
+                </div>
+                <div>${name}</div>
+            `;
+                        legend.appendChild(item);
+                    }
                 }
             });
 
             map.addLayer({
-                'id': 'trail-labels',
-                'type': 'symbol',
-                'source': 'trails',
-                'layout': {
-                    'symbol-placement': 'line',
-                    'text-field': ['get', 'name'], // Assuming 'label' is the property containing the letter
-                    'text-size': 12,
-                    'text-font': ['Roboto Bold'], // Use the desired font
-                    'text-keep-upright': true
-                },
-                'paint': {
-                    'text-color': 'black',
-                    'text-halo-color': 'white',
-                    'text-halo-width': 1
-                }
-            });
-
-
-            /*
-                        // Extract start and end points from the trails
-                        const markerFeatures = [];
-                        data.features.forEach(feature => {
-                            const coordinates = feature.geometry.coordinates;
-                            if (coordinates.length > 0) {
-                                const start = coordinates[0];
-                                const end = coordinates[coordinates.length - 1];
-                                markerFeatures.push({
-                                    type: 'Feature',
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: start
-                                    },
-                                    properties: {
-                                        type: 'start'
-                                    }
-                                });
-                                markerFeatures.push({
-                                    type: 'Feature',
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: end
-                                    },
-                                    properties: {
-                                        type: 'end'
-                                    }
-                                });
-                            }
-                        });
-            
-                        // Add the markers as a source
-                        map.addSource('trail-markers', {
-                            type: 'geojson',
-                            data: {
-                                type: 'FeatureCollection',
-                                features: markerFeatures
-                            }
-                        });
-            
-                        // Add the markers as a layer
-                        map.addLayer({
-                            'id': 'trail-markers-layer',
-                            'type': 'circle',
-                            'source': 'trail-markers',
-                            'paint': {
-                                'circle-radius': 3,
-                                'circle-color': [
-                                    'match',
-                                    ['get', 'type'],
-                                    'start', '#f00', // Red for start points
-                                    'end', '#00f',   // Blue for end points
-                                ]
-                            }
-                        });
-            */
+            'id': 'trail-labels',
+            'type': 'symbol',
+            'source': 'trails',
+            'layout': {
+                'symbol-placement': 'line',
+                'text-field': ['get', 'name'], // Assuming 'label' is the property containing the letter
+                'text-size': 12,
+                'text-font': ['Roboto Bold'], // Use the desired font
+                'text-keep-upright': true
+            },
+            'paint': {
+                'text-color': 'black',
+                'text-halo-color': 'white',
+                'text-halo-width': 1
+            }
         });
-    })
-    .catch(error => {
-        console.error('Error loading the GeoJSON data:', error);
+
+
+        /*
+                    // Extract start and end points from the trails
+                    const markerFeatures = [];
+                    data.features.forEach(feature => {
+                        const coordinates = feature.geometry.coordinates;
+                        if (coordinates.length > 0) {
+                            const start = coordinates[0];
+                            const end = coordinates[coordinates.length - 1];
+                            markerFeatures.push({
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: start
+                                },
+                                properties: {
+                                    type: 'start'
+                                }
+                            });
+                            markerFeatures.push({
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: end
+                                },
+                                properties: {
+                                    type: 'end'
+                                }
+                            });
+                        }
+                    });
+        
+                    // Add the markers as a source
+                    map.addSource('trail-markers', {
+                        type: 'geojson',
+                        data: {
+                            type: 'FeatureCollection',
+                            features: markerFeatures
+                        }
+                    });
+        
+                    // Add the markers as a layer
+                    map.addLayer({
+                        'id': 'trail-markers-layer',
+                        'type': 'circle',
+                        'source': 'trail-markers',
+                        'paint': {
+                            'circle-radius': 3,
+                            'circle-color': [
+                                'match',
+                                ['get', 'type'],
+                                'start', '#f00', // Red for start points
+                                'end', '#00f',   // Blue for end points
+                            ]
+                        }
+                    });
+        */
     });
+    })
+    .catch (error => {
+    console.error('Error loading the GeoJSON data:', error);
+});
 
 
 
