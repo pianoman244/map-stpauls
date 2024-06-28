@@ -132,7 +132,10 @@ fetch('http://localhost:8000/maps/data/trails_demo.geojson')
                 'text-color': 'black',
                 'text-halo-color': 'white',
                 'text-halo-width': 1
-            }
+            },
+            'filter': ['all',
+                ['!=', ['get', 'trail_type'], 'streamed']
+            ]
         });
 
 
