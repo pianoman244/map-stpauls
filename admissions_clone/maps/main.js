@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
 });
 
 
-fetch('http://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trails_demo.geojson')
+fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trails_demo.geojson')
     .then(response => response.json())
     .then(data => {
         // Add the trail data as a source
