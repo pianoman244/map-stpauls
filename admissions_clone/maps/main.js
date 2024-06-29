@@ -79,7 +79,7 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
 
             map.addSource('points', {
                 'type': 'geojson',
-                'data': 'http://pianoman244.github.io/map-stpauls/utility/tree_extractions/zone_a.geojson' // Path to your GeoJSON file
+                'data': 'https://pianoman244.github.io/map-stpauls/utility/tree_extractions/zone_a.geojson' // Path to your GeoJSON file
             });
 
             // Add a circle layer
