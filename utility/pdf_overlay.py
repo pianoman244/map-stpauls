@@ -41,7 +41,8 @@ def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path):
     original_page = original_pdf.pages[page_num]
     overlay_page = overlay_pdf.pages[0]
     
-    
+    # Credit to this forum for this code:
+    # https://github.com/py-pdf/pypdf/issues/1280
     overlay_page.add_transformation(
     Transformation()
     .translate(-float(overlay_page.mediabox.width) / 2, -float(overlay_page.mediabox.height) / 2)
