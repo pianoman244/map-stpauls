@@ -2,7 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvb
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/pianoman24/clxddq2my002c01qo8oc10owh',
+    style: 'mapbox://styles/mapbox/satellite-streets-v12',
     center: [-71.58, 43.190409], // default center [lng, lat]
     zoom: 13.78, // default zoom
     pitch: 0,
@@ -23,11 +23,11 @@ if (window.location.protocol === 'file:') {
 // Function to update the layer visibility based on zoom level
 function updateLayerVisibility() {
     var zoom = map.getZoom();
-    if (zoom >= 15) {
+    if (15 > zoom && zoom >= 14) {
         map.setPaintProperty('trees-layer', 'circle-opacity', 1, {
             'duration': 500
         });
-    } else {
+    } else if (zoom < 14) {
         map.setPaintProperty('trees-layer', 'circle-opacity', 0, {
             'duration': 500
         });
@@ -84,7 +84,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
 
             map.addSource('points', {
                 'type': 'geojson',
-                'data': path + 'utility/tree_extractions/zone_a.geojson' // Path to your GeoJSON file
+                'data': path + 'utility/tree_extractions/all_trees.geojson'
             });
 
             // Add a circle layer
@@ -95,16 +95,26 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 'slot': 'middle',
                 'paint': {
                     // Circle radius changes with zoom level
+                    /*
                     'circle-radius': [
                         'interpolate',
-                        ['exponential', 1.8],
+                        ['exponential', 2],
                         ['zoom'],
-                        15, ['*', ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 1/4], 1],
-                        22, ['*', ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 1/4], 40]
+                        15, ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 0.2],
+                        22, ['*', ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 0.2], 20]
+                    ],*/
+                    'circle-radius': [
+                        'interpolate',
+                        ['exponential', 2],
+                        ['zoom'],
+                        15, ['*', 1, ['^', ['to-number', ['get', 'DBH (inches)'], 8], 0.3]],
+                        22, ['*', 20, ['^', ['to-number', ['get', 'DBH (inches)'], 8], 0.3]]
                     ],
                     'circle-color': '#008800', // Green color
                     'circle-pitch-scale': 'map', // Scale circles with the map
-                    'circle-pitch-alignment': 'map' // Align circles with the map pitch
+                    'circle-pitch-alignment': 'map', // Align circles with the map pitch
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': '#000000'
                 },
                 'minzoom': 14
             });
@@ -341,9 +351,11 @@ map.on('click', 'trees-layer', function (e) {
     <strong>Botanical Name:</strong> ${properties["Botanical Name"]}<br>
     <strong>Common Name:</strong> ${properties["Common Name"]}<br>
     <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}<br>
+    <strong>DBH Info:</strong> ${properties["DBH Info"]}<br>
     <strong>General Health:</strong> ${properties["General Health"]}<br>
     <strong>Memorial Tree:</strong> ${properties["Memorial Tree"]}<br>
-    <strong>Notes:</strong> ${properties["Notes"]}
+    <strong>Latitude:</strong> ${coordinates[1]}<br>
+    <strong>Longitude:</strong> ${coordinates[0]}
     `;
 
     // Ensure the popup appears over the correct location
@@ -376,3 +388,8 @@ function resetMap() {
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
     });
 }
+
+map.on('click', (e) => {
+    const coordinates = e.lngLat;
+    console.log(`Latitude: ${coordinates.lat}, Longitude: ${coordinates.lng}`);
+});

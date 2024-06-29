@@ -1,0 +1,6914 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57691,
+          43.195323
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "Tree ID": "B-001",
+        "Numerical ID": 1,
+        "Botanical Name": "Acer griseum",
+        "Common Name": "Paperbark Maple",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577155,
+          43.195373
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "Tree ID": "B-002",
+        "Numerical ID": 2,
+        "Botanical Name": "Juglans cinerea",
+        "Common Name": "Butternut",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577189,
+          43.195408
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "Tree ID": "B-003",
+        "Numerical ID": 3,
+        "Botanical Name": "Cornus florida",
+        "Common Name": "Flowering Dogwood",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577252,
+          43.19541
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "Tree ID": "B-004",
+        "Numerical ID": 4,
+        "Botanical Name": "Cornus florida",
+        "Common Name": "Flowering Dogwood",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577129,
+          43.195231
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "Tree ID": "B-005",
+        "Numerical ID": 5,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577862,
+          43.195202
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "Tree ID": "B-006",
+        "Numerical ID": 6,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577537,
+          43.194908
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "Tree ID": "B-007",
+        "Numerical ID": 7,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577471,
+          43.195063
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "Tree ID": "B-008",
+        "Numerical ID": 8,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "American Sycamore",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577307,
+          43.19512
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "Tree ID": "B-009",
+        "Numerical ID": 9,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577208,
+          43.194964
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "Tree ID": "B-011",
+        "Numerical ID": 11,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577401,
+          43.194876
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "Tree ID": "B-010",
+        "Numerical ID": 10,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576382,
+          43.195182
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "Tree ID": "B-012",
+        "Numerical ID": 12,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57639,
+          43.195127
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "Tree ID": "B-013",
+        "Numerical ID": 13,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576436,
+          43.195157
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "Tree ID": "B-014",
+        "Numerical ID": 14,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57648,
+          43.195077
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "Tree ID": "B-016",
+        "Numerical ID": 16,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576528,
+          43.195113
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "Tree ID": "B-015",
+        "Numerical ID": 15,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576186,
+          43.195138
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "Tree ID": "B-017",
+        "Numerical ID": 17,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576221,
+          43.195081
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "Tree ID": "B-018",
+        "Numerical ID": 18,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576318,
+          43.194972
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "Tree ID": "B-019",
+        "Numerical ID": 19,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576442,
+          43.194999
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "Tree ID": "B-020",
+        "Numerical ID": 20,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57653,
+          43.194921
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "Tree ID": "B-021",
+        "Numerical ID": 21,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576602,
+          43.194958
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "Tree ID": "B-022",
+        "Numerical ID": 22,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576678,
+          43.19488
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "Tree ID": "B-023",
+        "Numerical ID": 23,
+        "Botanical Name": "Cladrastis kentukea",
+        "Common Name": "Yellowwood",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577083,
+          43.194534
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "Tree ID": "B-027",
+        "Numerical ID": 27,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "American Sycamore",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577024,
+          43.194492
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "Tree ID": "B-028",
+        "Numerical ID": 28,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "American Sycamore",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577114,
+          43.194423
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "Tree ID": "B-029",
+        "Numerical ID": 29,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "American Sycamore",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577968,
+          43.194401
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "Tree ID": "B-030",
+        "Numerical ID": 30,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577314,
+          43.19422
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "Tree ID": "B-031",
+        "Numerical ID": 31,
+        "Botanical Name": "Fagus grandifolia",
+        "Common Name": "American Beech",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576257,
+          43.194731
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "Tree ID": "B-032",
+        "Numerical ID": 32,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576377,
+          43.194627
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "Tree ID": "B-033",
+        "Numerical ID": 33,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576478,
+          43.19454
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "Tree ID": "B-034",
+        "Numerical ID": 34,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576611,
+          43.194424
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "Tree ID": "B-035",
+        "Numerical ID": 35,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576729,
+          43.19432
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "Tree ID": "B-036",
+        "Numerical ID": 36,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576968,
+          43.194119
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "Tree ID": "B-037",
+        "Numerical ID": 37,
+        "Botanical Name": "Liquidambar styraciflua",
+        "Common Name": "American Sweetgum",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577236,
+          43.193911
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "Tree ID": "B-038",
+        "Numerical ID": 38,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 9.0,
+        "DBH Info": "9",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57794,
+          43.19384
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "Tree ID": "B-039",
+        "Numerical ID": 39,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578491,
+          43.194006
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "Tree ID": "B-040",
+        "Numerical ID": 40,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578497,
+          43.194138
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "Tree ID": "B-041",
+        "Numerical ID": 41,
+        "Botanical Name": "Amelanchier laevis",
+        "Common Name": "Downy Serviceberry",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578802,
+          43.193963
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "Tree ID": "B-042",
+        "Numerical ID": 42,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578513,
+          43.193877
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "Tree ID": "B-043",
+        "Numerical ID": 43,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578421,
+          43.193807
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "Tree ID": "B-044",
+        "Numerical ID": 44,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578312,
+          43.193737
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "Tree ID": "B-045",
+        "Numerical ID": 45,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578203,
+          43.193667
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "Tree ID": "B-046",
+        "Numerical ID": 46,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578316,
+          43.193658
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "Tree ID": "B-047",
+        "Numerical ID": 47,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578333,
+          43.193605
+        ]
+      },
+      "properties": {
+        "id": 48,
+        "Tree ID": "B-048",
+        "Numerical ID": 48,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578074,
+          43.193706
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "Tree ID": "B-049",
+        "Numerical ID": 49,
+        "Botanical Name": "Fagus sylvatica",
+        "Common Name": "European Beech",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577928,
+          43.193717
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "Tree ID": "B-050",
+        "Numerical ID": 50,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 27.0,
+        "DBH Info": "27",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578085,
+          43.193422
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "Tree ID": "B-053",
+        "Numerical ID": 53,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578159,
+          43.193426
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "Tree ID": "B-054",
+        "Numerical ID": 54,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578347,
+          43.193288
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "Tree ID": "B-055",
+        "Numerical ID": 55,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578383,
+          43.193308
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "Tree ID": "B-056",
+        "Numerical ID": 56,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578419,
+          43.193335
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "Tree ID": "B-057",
+        "Numerical ID": 57,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57845,
+          43.193314
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "Tree ID": "B-060",
+        "Numerical ID": 60,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578417,
+          43.19329
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "Tree ID": "B-059",
+        "Numerical ID": 59,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578386,
+          43.193268
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "Tree ID": "B-058",
+        "Numerical ID": 58,
+        "Botanical Name": "Amelanchier aborea",
+        "Common Name": "Shadblow",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578245,
+          43.193345
+        ]
+      },
+      "properties": {
+        "id": 61,
+        "Tree ID": "B-061",
+        "Numerical ID": 61,
+        "Botanical Name": "Betula lenta",
+        "Common Name": "Sweet Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578276,
+          43.193319
+        ]
+      },
+      "properties": {
+        "id": 62,
+        "Tree ID": "B-062",
+        "Numerical ID": 62,
+        "Botanical Name": "Betula lenta",
+        "Common Name": "Sweet Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578319,
+          43.193345
+        ]
+      },
+      "properties": {
+        "id": 64,
+        "Tree ID": "B-064",
+        "Numerical ID": 64,
+        "Botanical Name": "Betula lenta",
+        "Common Name": "Sweet Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577347,
+          43.193145
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "Tree ID": "B-081",
+        "Numerical ID": 81,
+        "Botanical Name": "Nyssa sylvatica",
+        "Common Name": "Tupleo",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577005,
+          43.192905
+        ]
+      },
+      "properties": {
+        "id": 84,
+        "Tree ID": "B-084",
+        "Numerical ID": 84,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577032,
+          43.192985
+        ]
+      },
+      "properties": {
+        "id": 85,
+        "Tree ID": "B-085",
+        "Numerical ID": 85,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577121,
+          43.193083
+        ]
+      },
+      "properties": {
+        "id": 86,
+        "Tree ID": "B-086",
+        "Numerical ID": 86,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577147,
+          43.193146
+        ]
+      },
+      "properties": {
+        "id": 87,
+        "Tree ID": "B-087",
+        "Numerical ID": 87,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576857,
+          43.192749
+        ]
+      },
+      "properties": {
+        "id": 88,
+        "Tree ID": "B-088",
+        "Numerical ID": 88,
+        "Botanical Name": "Cornus florida",
+        "Common Name": "Flowering Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57687,
+          43.19279
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "Tree ID": "B-160",
+        "Numerical ID": 160,
+        "Botanical Name": "Acer palmatan",
+        "Common Name": "Japanese Maple",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577208,
+          43.193777
+        ]
+      },
+      "properties": {
+        "id": 89,
+        "Tree ID": "B-089",
+        "Numerical ID": 89,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 34.0,
+        "DBH Info": "34",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577071,
+          43.193886
+        ]
+      },
+      "properties": {
+        "id": 90,
+        "Tree ID": "B-090",
+        "Numerical ID": 90,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 7.0,
+        "DBH Info": "7",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576901,
+          43.194012
+        ]
+      },
+      "properties": {
+        "id": 91,
+        "Tree ID": "B-091",
+        "Numerical ID": 91,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 7.0,
+        "DBH Info": "7",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576614,
+          43.194272
+        ]
+      },
+      "properties": {
+        "id": 92,
+        "Tree ID": "B-092",
+        "Numerical ID": 92,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576485,
+          43.194387
+        ]
+      },
+      "properties": {
+        "id": 93,
+        "Tree ID": "B-093",
+        "Numerical ID": 93,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576314,
+          43.194433
+        ]
+      },
+      "properties": {
+        "id": 94,
+        "Tree ID": "B-094",
+        "Numerical ID": 94,
+        "Botanical Name": "Fagus grandifolia",
+        "Common Name": "American Beech",
+        "DBH (inches)": 66.0,
+        "DBH Info": "66",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576123,
+          43.194314
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "Tree ID": "B-095",
+        "Numerical ID": 95,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 60.0,
+        "DBH Info": "60",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576166,
+          43.194274
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "Tree ID": "B-096",
+        "Numerical ID": 96,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8,
+        "DBH Info": "8 multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576223,
+          43.194324
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "Tree ID": "B-097",
+        "Numerical ID": 97,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576626,
+          43.194165
+        ]
+      },
+      "properties": {
+        "id": 100,
+        "Tree ID": "B-100",
+        "Numerical ID": 100,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576738,
+          43.194068
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "Tree ID": "B-107",
+        "Numerical ID": 107,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576679,
+          43.194119
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "Tree ID": "B-102",
+        "Numerical ID": 102,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576585,
+          43.194144
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "Tree ID": "B-099",
+        "Numerical ID": 99,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576703,
+          43.194041
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "Tree ID": "B-106",
+        "Numerical ID": 106,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576609,
+          43.194124
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "Tree ID": "B-101",
+        "Numerical ID": 101,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576631,
+          43.194105
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "Tree ID": "B-103",
+        "Numerical ID": 103,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576655,
+          43.194084
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "Tree ID": "B-104",
+        "Numerical ID": 104,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57668,
+          43.194062
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "Tree ID": "B-105",
+        "Numerical ID": 105,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576654,
+          43.193955
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "Tree ID": "B-108",
+        "Numerical ID": 108,
+        "Botanical Name": "Fagus grandifolia",
+        "Common Name": "American Beech",
+        "DBH (inches)": 48.0,
+        "DBH Info": "48",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576859,
+          43.193914
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "Tree ID": "B-109",
+        "Numerical ID": 109,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576898,
+          43.193911
+        ]
+      },
+      "properties": {
+        "id": 110,
+        "Tree ID": "B-110",
+        "Numerical ID": 110,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57684,
+          43.193875
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "Tree ID": "B-111",
+        "Numerical ID": 111,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576926,
+          43.19387
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "Tree ID": "B-112",
+        "Numerical ID": 112,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576875,
+          43.193836
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "Tree ID": "B-113",
+        "Numerical ID": 113,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576902,
+          43.193807
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "Tree ID": "B-114",
+        "Numerical ID": 114,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 20.0,
+        "DBH Info": "20",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576935,
+          43.193776
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "Tree ID": "B-115",
+        "Numerical ID": 115,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57698,
+          43.193826
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "Tree ID": "B-116",
+        "Numerical ID": 116,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577025,
+          43.193785
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "Tree ID": "B-117",
+        "Numerical ID": 117,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576975,
+          43.193742
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "Tree ID": "B-118",
+        "Numerical ID": 118,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577059,
+          43.193752
+        ]
+      },
+      "properties": {
+        "id": 119,
+        "Tree ID": "B-119",
+        "Numerical ID": 119,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577013,
+          43.193707
+        ]
+      },
+      "properties": {
+        "id": 121,
+        "Tree ID": "B-121",
+        "Numerical ID": 121,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57705,
+          43.193675
+        ]
+      },
+      "properties": {
+        "id": 122,
+        "Tree ID": "B-122",
+        "Numerical ID": 122,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577079,
+          43.193717
+        ]
+      },
+      "properties": {
+        "id": 120,
+        "Tree ID": "B-120",
+        "Numerical ID": 120,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577125,
+          43.19367
+        ]
+      },
+      "properties": {
+        "id": 123,
+        "Tree ID": "B-123",
+        "Numerical ID": 123,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577126,
+          43.193592
+        ]
+      },
+      "properties": {
+        "id": 124,
+        "Tree ID": "B-124",
+        "Numerical ID": 124,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 52.0,
+        "DBH Info": "52",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577,
+          43.193544
+        ]
+      },
+      "properties": {
+        "id": 125,
+        "Tree ID": "B-125",
+        "Numerical ID": 125,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 49.0,
+        "DBH Info": "49",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577077,
+          43.193492
+        ]
+      },
+      "properties": {
+        "id": 126,
+        "Tree ID": "B-126",
+        "Numerical ID": 126,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 52.0,
+        "DBH Info": "52",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576967,
+          43.193456
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "Tree ID": "B-127",
+        "Numerical ID": 127,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576954,
+          43.193429
+        ]
+      },
+      "properties": {
+        "id": 128,
+        "Tree ID": "B-128",
+        "Numerical ID": 128,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577077,
+          43.193521
+        ]
+      },
+      "properties": {
+        "id": 129,
+        "Tree ID": "B-129",
+        "Numerical ID": 129,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 52.0,
+        "DBH Info": "52",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576902,
+          43.19343
+        ]
+      },
+      "properties": {
+        "id": 130,
+        "Tree ID": "B-130",
+        "Numerical ID": 130,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 26.0,
+        "DBH Info": "26",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576821,
+          43.193429
+        ]
+      },
+      "properties": {
+        "id": 131,
+        "Tree ID": "B-131",
+        "Numerical ID": 131,
+        "Botanical Name": "Cornus florida",
+        "Common Name": "Flowering Dogwood",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576698,
+          43.1935
+        ]
+      },
+      "properties": {
+        "id": 137,
+        "Tree ID": "B-137",
+        "Numerical ID": 137,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576776,
+          43.193552
+        ]
+      },
+      "properties": {
+        "id": 135,
+        "Tree ID": "B-135",
+        "Numerical ID": 135,
+        "Botanical Name": "Acer saccharinum",
+        "Common Name": "Silver Maple",
+        "DBH (inches)": 56.0,
+        "DBH Info": "56",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576829,
+          43.19352
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "Tree ID": "B-134",
+        "Numerical ID": 134,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57685,
+          43.193488
+        ]
+      },
+      "properties": {
+        "id": 133,
+        "Tree ID": "B-133",
+        "Numerical ID": 133,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576859,
+          43.193454
+        ]
+      },
+      "properties": {
+        "id": 132,
+        "Tree ID": "B-132",
+        "Numerical ID": 132,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576426,
+          43.193647
+        ]
+      },
+      "properties": {
+        "id": 161,
+        "Tree ID": "B-161",
+        "Numerical ID": 161,
+        "Botanical Name": "Acer saccharam",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576356,
+          43.193706
+        ]
+      },
+      "properties": {
+        "id": 162,
+        "Tree ID": "B-162",
+        "Numerical ID": 162,
+        "Botanical Name": "Metasequoia \nglyptostroboides",
+        "Common Name": "Dawn Redwood",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576354,
+          43.193851
+        ]
+      },
+      "properties": {
+        "id": 138,
+        "Tree ID": "B-138",
+        "Numerical ID": 138,
+        "Botanical Name": "Magnolia virginiana",
+        "Common Name": "Sweetbay Magnolia",
+        "DBH (inches)": 8,
+        "DBH Info": "multi  stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576174,
+          43.193985
+        ]
+      },
+      "properties": {
+        "id": 139,
+        "Tree ID": "B-139",
+        "Numerical ID": 139,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576239,
+          43.194006
+        ]
+      },
+      "properties": {
+        "id": 140,
+        "Tree ID": "B-140",
+        "Numerical ID": 140,
+        "Botanical Name": "Acer palmatum",
+        "Common Name": "Japanese Maple",
+        "DBH (inches)": 8,
+        "DBH Info": "8 multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576407,
+          43.193984
+        ]
+      },
+      "properties": {
+        "id": 141,
+        "Tree ID": "B-141",
+        "Numerical ID": 141,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576498,
+          43.194048
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "Tree ID": "B-142",
+        "Numerical ID": 142,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576063,
+          43.194027
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "Tree ID": "B-143",
+        "Numerical ID": 143,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575969,
+          43.194027
+        ]
+      },
+      "properties": {
+        "id": 144,
+        "Tree ID": "B-144",
+        "Numerical ID": 144,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 33.0,
+        "DBH Info": "33",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575786,
+          43.19437
+        ]
+      },
+      "properties": {
+        "id": 155,
+        "Tree ID": "B-155",
+        "Numerical ID": 155,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575612,
+          43.194447
+        ]
+      },
+      "properties": {
+        "id": 156,
+        "Tree ID": "B-156",
+        "Numerical ID": 156,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 38.0,
+        "DBH Info": "38",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576022,
+          43.194095
+        ]
+      },
+      "properties": {
+        "id": 145,
+        "Tree ID": "B-145",
+        "Numerical ID": 145,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 56.0,
+        "DBH Info": "56",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576021,
+          43.194201
+        ]
+      },
+      "properties": {
+        "id": 147,
+        "Tree ID": "B-147",
+        "Numerical ID": 147,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575959,
+          43.194155
+        ]
+      },
+      "properties": {
+        "id": 149,
+        "Tree ID": "B-149",
+        "Numerical ID": 149,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "8 multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575916,
+          43.194162
+        ]
+      },
+      "properties": {
+        "id": 150,
+        "Tree ID": "B-150",
+        "Numerical ID": 150,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575941,
+          43.194068
+        ]
+      },
+      "properties": {
+        "id": 151,
+        "Tree ID": "B-151",
+        "Numerical ID": 151,
+        "Botanical Name": "Amelanchier laevis",
+        "Common Name": "Downy Serviceberry",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575915,
+          43.194128
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "Tree ID": "B-152",
+        "Numerical ID": 152,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57592,
+          43.194097
+        ]
+      },
+      "properties": {
+        "id": 153,
+        "Tree ID": "B-153",
+        "Numerical ID": 153,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576839,
+          43.194628
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "Tree ID": "B-026",
+        "Numerical ID": 26,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "American Sycamore",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577619,
+          43.19361
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "Tree ID": "B-051",
+        "Numerical ID": 51,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578139,
+          43.193213
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "Tree ID": "B-052",
+        "Numerical ID": 52,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576656,
+          43.193578
+        ]
+      },
+      "properties": {
+        "id": 136,
+        "Tree ID": "B-136",
+        "Numerical ID": 136,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576091,
+          43.194227
+        ]
+      },
+      "properties": {
+        "id": 146,
+        "Tree ID": "B-146",
+        "Numerical ID": 146,
+        "Botanical Name": "Gleditsia triacanthos",
+        "Common Name": "Honeylocust",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575948,
+          43.194188
+        ]
+      },
+      "properties": {
+        "id": 148,
+        "Tree ID": "B-148",
+        "Numerical ID": 148,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 14.0,
+        "DBH Info": "14",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576771,
+          43.194945
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "Tree ID": "B-024",
+        "Numerical ID": 24,
+        "Botanical Name": "Cornus kousa",
+        "Common Name": "Kousa Dogwood",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577118,
+          43.194116
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "Tree ID": "B-025",
+        "Numerical ID": 25,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577579,
+          43.193797
+        ]
+      },
+      "properties": {
+        "id": 165,
+        "Tree ID": "B-165",
+        "Numerical ID": 165,
+        "Botanical Name": "Querus alba",
+        "Common Name": "White Oak",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578017,
+          43.193891
+        ]
+      },
+      "properties": {
+        "id": 166,
+        "Tree ID": "B-166",
+        "Numerical ID": 166,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578048,
+          43.193916
+        ]
+      },
+      "properties": {
+        "id": 167,
+        "Tree ID": "B-167",
+        "Numerical ID": 167,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578083,
+          43.193941
+        ]
+      },
+      "properties": {
+        "id": 168,
+        "Tree ID": "B-168",
+        "Numerical ID": 168,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578114,
+          43.193966
+        ]
+      },
+      "properties": {
+        "id": 169,
+        "Tree ID": "B-169",
+        "Numerical ID": 169,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57815,
+          43.193992
+        ]
+      },
+      "properties": {
+        "id": 170,
+        "Tree ID": "B-170",
+        "Numerical ID": 170,
+        "Botanical Name": "Halesia carolina",
+        "Common Name": "Carolina Silverbell",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577245,
+          43.192993
+        ]
+      },
+      "properties": {
+        "id": 171,
+        "Tree ID": "B-171",
+        "Numerical ID": 171,
+        "Botanical Name": "Amelanchier canadensis",
+        "Common Name": "Serviceberry",
+        "DBH (inches)": 8,
+        "DBH Info": "multi stem",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576679,
+          43.193539
+        ]
+      },
+      "properties": {
+        "id": 172,
+        "Tree ID": "B-172",
+        "Numerical ID": 172,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576651,
+          43.193655
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "Tree ID": "B-098",
+        "Numerical ID": 98,
+        "Botanical Name": "Cornus florida",
+        "Common Name": "Flowering Dogwood",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577256,
+          43.193653
+        ]
+      },
+      "properties": {
+        "id": 154,
+        "Tree ID": "B-154",
+        "Numerical ID": 154,
+        "Botanical Name": "Acer palmatan",
+        "Common Name": "Japanese Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576704,
+          43.194197
+        ]
+      },
+      "properties": {
+        "id": 159,
+        "Tree ID": "B-159",
+        "Numerical ID": 159,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577074,
+          43.193462
+        ]
+      },
+      "properties": {
+        "id": 174,
+        "Tree ID": "B-174",
+        "Numerical ID": 174,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576972,
+          43.193486
+        ]
+      },
+      "properties": {
+        "id": 173,
+        "Tree ID": "B-173",
+        "Numerical ID": 173,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 40.0,
+        "DBH Info": "40",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578287,
+          43.19337
+        ]
+      },
+      "properties": {
+        "id": 63,
+        "Tree ID": "B-063",
+        "Numerical ID": 63,
+        "Botanical Name": "Betula lenta",
+        "Common Name": "Sweet Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578625,
+          43.193505
+        ]
+      },
+      "properties": {
+        "id": 65,
+        "Tree ID": "B-065",
+        "Numerical ID": 65,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578683,
+          43.193537
+        ]
+      },
+      "properties": {
+        "id": 66,
+        "Tree ID": "B-066",
+        "Numerical ID": 66,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578725,
+          43.19351
+        ]
+      },
+      "properties": {
+        "id": 67,
+        "Tree ID": "B-067",
+        "Numerical ID": 67,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578887,
+          43.193737
+        ]
+      },
+      "properties": {
+        "id": 68,
+        "Tree ID": "B-068",
+        "Numerical ID": 68,
+        "Botanical Name": "Pinus resinosa",
+        "Common Name": "Red Pine",
+        "DBH (inches)": 34.0,
+        "DBH Info": "34",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578982,
+          43.193752
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "Tree ID": "B-069",
+        "Numerical ID": 69,
+        "Botanical Name": "Pinus resinosa",
+        "Common Name": "Red Pine",
+        "DBH (inches)": 14.0,
+        "DBH Info": "14",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.579011,
+          43.193844
+        ]
+      },
+      "properties": {
+        "id": 70,
+        "Tree ID": "B-070",
+        "Numerical ID": 70,
+        "Botanical Name": "Pinus resinosa",
+        "Common Name": "Red Pine",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578468,
+          43.192811
+        ]
+      },
+      "properties": {
+        "id": 71,
+        "Tree ID": "B-071",
+        "Numerical ID": 71,
+        "Botanical Name": "Ginkgo biloba",
+        "Common Name": "Gingko",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57837,
+          43.192883
+        ]
+      },
+      "properties": {
+        "id": 72,
+        "Tree ID": "B-072",
+        "Numerical ID": 72,
+        "Botanical Name": "Ginkgo biloba",
+        "Common Name": "Gingko",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578283,
+          43.192949
+        ]
+      },
+      "properties": {
+        "id": 73,
+        "Tree ID": "B-073",
+        "Numerical ID": 73,
+        "Botanical Name": "Ginkgo biloba",
+        "Common Name": "Gingko",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578158,
+          43.193042
+        ]
+      },
+      "properties": {
+        "id": 74,
+        "Tree ID": "B-074",
+        "Numerical ID": 74,
+        "Botanical Name": "Acer saccarum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57804,
+          43.193058
+        ]
+      },
+      "properties": {
+        "id": 75,
+        "Tree ID": "B-075",
+        "Numerical ID": 75,
+        "Botanical Name": "Betula nigra",
+        "Common Name": "River Birch",
+        "DBH (inches)": 8,
+        "DBH Info": "clump",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577907,
+          43.193144
+        ]
+      },
+      "properties": {
+        "id": 76,
+        "Tree ID": "B-076",
+        "Numerical ID": 76,
+        "Botanical Name": "Nyssa sylvatica",
+        "Common Name": "Tupleo",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577785,
+          43.193257
+        ]
+      },
+      "properties": {
+        "id": 77,
+        "Tree ID": "B-077",
+        "Numerical ID": 77,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577475,
+          43.193486
+        ]
+      },
+      "properties": {
+        "id": 78,
+        "Tree ID": "B-078",
+        "Numerical ID": 78,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 38.0,
+        "DBH Info": "38",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5774,
+          43.19342
+        ]
+      },
+      "properties": {
+        "id": 79,
+        "Tree ID": "B-079",
+        "Numerical ID": 79,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577389,
+          43.193475
+        ]
+      },
+      "properties": {
+        "id": 80,
+        "Tree ID": "B-080",
+        "Numerical ID": 80,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57729,
+          43.193052
+        ]
+      },
+      "properties": {
+        "id": 82,
+        "Tree ID": "B-082",
+        "Numerical ID": 82,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 8,
+        "DBH Info": "multi",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577216,
+          43.193059
+        ]
+      },
+      "properties": {
+        "id": 83,
+        "Tree ID": "B-083",
+        "Numerical ID": 83,
+        "Botanical Name": "Liquidambar styraciflua",
+        "Common Name": "Sweetgrum",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578961,
+          43.193672
+        ]
+      },
+      "properties": {
+        "id": 164,
+        "Tree ID": "B-164",
+        "Numerical ID": 164,
+        "Botanical Name": "Pinus strobus",
+        "Common Name": "White Pine",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.578936,
+          43.193823
+        ]
+      },
+      "properties": {
+        "id": 163,
+        "Tree ID": "B-163",
+        "Numerical ID": 163,
+        "Botanical Name": "Pinus resinosa",
+        "Common Name": "Red Pine",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57774,
+          43.193391
+        ]
+      },
+      "properties": {
+        "id": 157,
+        "Tree ID": "B-157",
+        "Numerical ID": 157,
+        "Botanical Name": "Liriodendron tulipifera",
+        "Common Name": "Tulip Tree",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577658,
+          43.193451
+        ]
+      },
+      "properties": {
+        "id": 158,
+        "Tree ID": "B-158",
+        "Numerical ID": 158,
+        "Botanical Name": "Liriodendron tulipifera",
+        "Common Name": "Tulip Tree",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57228,
+          43.195561
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "Tree ID": "A-001",
+        "Numerical ID": 1,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572365,
+          43.195549
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "Tree ID": "A-002",
+        "Numerical ID": 2,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57245,
+          43.195579
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "Tree ID": "A-003",
+        "Numerical ID": 3,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572544,
+          43.195504
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "Tree ID": "A-004",
+        "Numerical ID": 4,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572725,
+          43.195462
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "Tree ID": "A-005",
+        "Numerical ID": 5,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572754,
+          43.195588
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "Tree ID": "A-006",
+        "Numerical ID": 6,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57294,
+          43.195386
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "Tree ID": "A-007",
+        "Numerical ID": 7,
+        "Botanical Name": "Prunus sp.",
+        "Common Name": "Cherry  sp.",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572965,
+          43.19542
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "Tree ID": "A-008",
+        "Numerical ID": 8,
+        "Botanical Name": "Prunus sp.",
+        "Common Name": "Cherry  sp.",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.572994,
+          43.195453
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "Tree ID": "A-009",
+        "Numerical ID": 9,
+        "Botanical Name": "Prunus sp.",
+        "Common Name": "Cherry  sp.",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573015,
+          43.195515
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "Tree ID": "A-010",
+        "Numerical ID": 10,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57308,
+          43.196545
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "Tree ID": "A-018",
+        "Numerical ID": 18,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573079,
+          43.196595
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "Tree ID": "A-019",
+        "Numerical ID": 19,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573076,
+          43.196645
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "Tree ID": "A-020",
+        "Numerical ID": 20,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573073,
+          43.196693
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "Tree ID": "A-021",
+        "Numerical ID": 21,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573067,
+          43.196766
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "Tree ID": "A-022",
+        "Numerical ID": 22,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573228,
+          43.196666
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "Tree ID": "A-023",
+        "Numerical ID": 23,
+        "Botanical Name": "Aesculus hippocastanum",
+        "Common Name": "HorseChestnut",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573328,
+          43.19687
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "Tree ID": "A-024",
+        "Numerical ID": 24,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573428,
+          43.196833
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "Tree ID": "A-025",
+        "Numerical ID": 25,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57347,
+          43.196825
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "Tree ID": "A-026",
+        "Numerical ID": 26,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573514,
+          43.196814
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "Tree ID": "A-027",
+        "Numerical ID": 27,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573564,
+          43.196801
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "Tree ID": "A-028",
+        "Numerical ID": 28,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574196,
+          43.196531
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "Tree ID": "A-031",
+        "Numerical ID": 31,
+        "Botanical Name": "Cercidiphyllum japonicum",
+        "Common Name": "Katsura Tree",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57423,
+          43.196592
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "Tree ID": "A-032",
+        "Numerical ID": 32,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574581,
+          43.19626
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "Tree ID": "A-033",
+        "Numerical ID": 33,
+        "Botanical Name": "Pinus resinosa",
+        "Common Name": "Red Pine",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574639,
+          43.196338
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "Tree ID": "A-034",
+        "Numerical ID": 34,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5748,
+          43.196356
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "Tree ID": "A-035",
+        "Numerical ID": 35,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575035,
+          43.196106
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "Tree ID": "A-036",
+        "Numerical ID": 36,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 48.0,
+        "DBH Info": "48",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57509,
+          43.196331
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "Tree ID": "A-037",
+        "Numerical ID": 37,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575316,
+          43.196185
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "Tree ID": "A-039",
+        "Numerical ID": 39,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575546,
+          43.196123
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "Tree ID": "A-040",
+        "Numerical ID": 40,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575607,
+          43.196077
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "Tree ID": "A-041",
+        "Numerical ID": 41,
+        "Botanical Name": "Magnolia x soulangiana",
+        "Common Name": "Saucer Magnolia",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575881,
+          43.195891
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "Tree ID": "A-043",
+        "Numerical ID": 43,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575979,
+          43.196018
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "Tree ID": "A-044",
+        "Numerical ID": 44,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 2.5,
+        "DBH Info": "2.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57633,
+          43.195899
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "Tree ID": "A-045",
+        "Numerical ID": 45,
+        "Botanical Name": "Ginkgo biloba",
+        "Common Name": "Ginkgo",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576286,
+          43.196032
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "Tree ID": "A-046",
+        "Numerical ID": 46,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 1.5,
+        "DBH Info": "1.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575423,
+          43.195892
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "Tree ID": "A-038",
+        "Numerical ID": 38,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576628,
+          43.196044
+        ]
+      },
+      "properties": {
+        "id": 48,
+        "Tree ID": "A-048",
+        "Numerical ID": 48,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576883,
+          43.195976
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "Tree ID": "A-049",
+        "Numerical ID": 49,
+        "Botanical Name": "Quercus palustris",
+        "Common Name": "Pin Oak",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576771,
+          43.196057
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "Tree ID": "A-050",
+        "Numerical ID": 50,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576883,
+          43.196072
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "Tree ID": "A-051",
+        "Numerical ID": 51,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577029,
+          43.196033
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "Tree ID": "A-052",
+        "Numerical ID": 52,
+        "Botanical Name": "Quercus palustris",
+        "Common Name": "Pin Oak",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.577087,
+          43.19613
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "Tree ID": "A-053",
+        "Numerical ID": 53,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5776,
+          43.195963
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "Tree ID": "A-054",
+        "Numerical ID": 54,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576851,
+          43.195767
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "Tree ID": "A-055",
+        "Numerical ID": 55,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 48.0,
+        "DBH Info": "48",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576924,
+          43.195621
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "Tree ID": "A-056",
+        "Numerical ID": 56,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 48.0,
+        "DBH Info": "48",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576403,
+          43.195762
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "Tree ID": "A-057",
+        "Numerical ID": 57,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576245,
+          43.195766
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "Tree ID": "A-058",
+        "Numerical ID": 58,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576125,
+          43.195764
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "Tree ID": "A-059",
+        "Numerical ID": 59,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576002,
+          43.195766
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "Tree ID": "A-060",
+        "Numerical ID": 60,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576465,
+          43.195664
+        ]
+      },
+      "properties": {
+        "id": 61,
+        "Tree ID": "A-061",
+        "Numerical ID": 61,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576507,
+          43.19563
+        ]
+      },
+      "properties": {
+        "id": 62,
+        "Tree ID": "A-062",
+        "Numerical ID": 62,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576563,
+          43.195594
+        ]
+      },
+      "properties": {
+        "id": 63,
+        "Tree ID": "A-063",
+        "Numerical ID": 63,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576224,
+          43.195614
+        ]
+      },
+      "properties": {
+        "id": 64,
+        "Tree ID": "A-064",
+        "Numerical ID": 64,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57638,
+          43.195549
+        ]
+      },
+      "properties": {
+        "id": 65,
+        "Tree ID": "A-065",
+        "Numerical ID": 65,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57645,
+          43.195484
+        ]
+      },
+      "properties": {
+        "id": 66,
+        "Tree ID": "A-066",
+        "Numerical ID": 66,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576305,
+          43.195462
+        ]
+      },
+      "properties": {
+        "id": 67,
+        "Tree ID": "A-067",
+        "Numerical ID": 67,
+        "Botanical Name": "Quercus palustris",
+        "Common Name": "Pin Oak",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576139,
+          43.195453
+        ]
+      },
+      "properties": {
+        "id": 68,
+        "Tree ID": "A-068",
+        "Numerical ID": 68,
+        "Botanical Name": "Fraxinus americana",
+        "Common Name": "White Ash",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576076,
+          43.195347
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "Tree ID": "A-069",
+        "Numerical ID": 69,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.576047,
+          43.195217
+        ]
+      },
+      "properties": {
+        "id": 70,
+        "Tree ID": "A-070",
+        "Numerical ID": 70,
+        "Botanical Name": "Fagus sylvatica",
+        "Common Name": "European Beech",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57596,
+          43.195204
+        ]
+      },
+      "properties": {
+        "id": 71,
+        "Tree ID": "A-071",
+        "Numerical ID": 71,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575698,
+          43.19536
+        ]
+      },
+      "properties": {
+        "id": 72,
+        "Tree ID": "A-072",
+        "Numerical ID": 72,
+        "Botanical Name": "Magnolia x soulangiana",
+        "Common Name": "Saucer Magnolia",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575624,
+          43.195442
+        ]
+      },
+      "properties": {
+        "id": 73,
+        "Tree ID": "A-073",
+        "Numerical ID": 73,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 16.0,
+        "DBH Info": "16",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575578,
+          43.195592
+        ]
+      },
+      "properties": {
+        "id": 74,
+        "Tree ID": "A-074",
+        "Numerical ID": 74,
+        "Botanical Name": "Fagus grandifolia",
+        "Common Name": "American Beech",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575466,
+          43.195491
+        ]
+      },
+      "properties": {
+        "id": 84,
+        "Tree ID": "A-084",
+        "Numerical ID": 84,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575834,
+          43.19574
+        ]
+      },
+      "properties": {
+        "id": 75,
+        "Tree ID": "A-075",
+        "Numerical ID": 75,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575588,
+          43.195745
+        ]
+      },
+      "properties": {
+        "id": 76,
+        "Tree ID": "A-076",
+        "Numerical ID": 76,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57565,
+          43.195294
+        ]
+      },
+      "properties": {
+        "id": 77,
+        "Tree ID": "A-077",
+        "Numerical ID": 77,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575458,
+          43.19568
+        ]
+      },
+      "properties": {
+        "id": 78,
+        "Tree ID": "A-078",
+        "Numerical ID": 78,
+        "Botanical Name": "Tsuga canadensis",
+        "Common Name": "Eastern Hemlock",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575475,
+          43.195783
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "Tree ID": "A-081",
+        "Numerical ID": 81,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575335,
+          43.195796
+        ]
+      },
+      "properties": {
+        "id": 82,
+        "Tree ID": "A-082",
+        "Numerical ID": 82,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57515,
+          43.1958
+        ]
+      },
+      "properties": {
+        "id": 80,
+        "Tree ID": "A-080",
+        "Numerical ID": 80,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575277,
+          43.195679
+        ]
+      },
+      "properties": {
+        "id": 79,
+        "Tree ID": "A-079",
+        "Numerical ID": 79,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575762,
+          43.195186
+        ]
+      },
+      "properties": {
+        "id": 85,
+        "Tree ID": "A-085",
+        "Numerical ID": 85,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575832,
+          43.195124
+        ]
+      },
+      "properties": {
+        "id": 86,
+        "Tree ID": "A-086",
+        "Numerical ID": 86,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574851,
+          43.19586
+        ]
+      },
+      "properties": {
+        "id": 88,
+        "Tree ID": "A-088",
+        "Numerical ID": 88,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574972,
+          43.195751
+        ]
+      },
+      "properties": {
+        "id": 89,
+        "Tree ID": "A-089",
+        "Numerical ID": 89,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 7.0,
+        "DBH Info": "7",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574733,
+          43.195817
+        ]
+      },
+      "properties": {
+        "id": 91,
+        "Tree ID": "A-091",
+        "Numerical ID": 91,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574773,
+          43.195704
+        ]
+      },
+      "properties": {
+        "id": 92,
+        "Tree ID": "A-092",
+        "Numerical ID": 92,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574994,
+          43.195434
+        ]
+      },
+      "properties": {
+        "id": 93,
+        "Tree ID": "A-093",
+        "Numerical ID": 93,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574608,
+          43.195611
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "Tree ID": "A-095",
+        "Numerical ID": 95,
+        "Botanical Name": "Pyrus calleryana",
+        "Common Name": "Bradford Pear",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574549,
+          43.195865
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "Tree ID": "A-096",
+        "Numerical ID": 96,
+        "Botanical Name": "Fagus sylvatica",
+        "Common Name": "European Beech",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574359,
+          43.195713
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "Tree ID": "A-097",
+        "Numerical ID": 97,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 10.0,
+        "DBH Info": "10",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574311,
+          43.195806
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "Tree ID": "A-098",
+        "Numerical ID": 98,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574235,
+          43.195777
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "Tree ID": "A-099",
+        "Numerical ID": 99,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574206,
+          43.195744
+        ]
+      },
+      "properties": {
+        "id": 100,
+        "Tree ID": "A-100",
+        "Numerical ID": 100,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574178,
+          43.195711
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "Tree ID": "A-101",
+        "Numerical ID": 101,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574155,
+          43.195676
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "Tree ID": "A-102",
+        "Numerical ID": 102,
+        "Botanical Name": "Abies concolor",
+        "Common Name": "White Fir",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574135,
+          43.195645
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "Tree ID": "A-103",
+        "Numerical ID": 103,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574101,
+          43.195605
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "Tree ID": "A-104",
+        "Numerical ID": 104,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574274,
+          43.195479
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "Tree ID": "A-105",
+        "Numerical ID": 105,
+        "Botanical Name": "Acer platanoides",
+        "Common Name": "Norway Maple",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574542,
+          43.19549
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "Tree ID": "A-106",
+        "Numerical ID": 106,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574697,
+          43.195394
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "Tree ID": "A-107",
+        "Numerical ID": 107,
+        "Botanical Name": "Betula papyrifera",
+        "Common Name": "White Birch",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574803,
+          43.19527
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "Tree ID": "A-108",
+        "Numerical ID": 108,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5747,
+          43.195174
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "Tree ID": "A-109",
+        "Numerical ID": 109,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 18.0,
+        "DBH Info": "18",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574491,
+          43.195193
+        ]
+      },
+      "properties": {
+        "id": 110,
+        "Tree ID": "A-110",
+        "Numerical ID": 110,
+        "Botanical Name": "Acer griseum",
+        "Common Name": "Paper Bark Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574582,
+          43.195083
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "Tree ID": "A-111",
+        "Numerical ID": 111,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574448,
+          43.194988
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "Tree ID": "A-112",
+        "Numerical ID": 112,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574163,
+          43.195071
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "Tree ID": "A-114",
+        "Numerical ID": 114,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 42.0,
+        "DBH Info": "42",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574249,
+          43.19496
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "Tree ID": "A-113",
+        "Numerical ID": 113,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574014,
+          43.195195
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "Tree ID": "A-115",
+        "Numerical ID": 115,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573494,
+          43.195334
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "Tree ID": "A-116",
+        "Numerical ID": 116,
+        "Botanical Name": "Quercus rubra",
+        "Common Name": "Red Oak",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573287,
+          43.195508
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "Tree ID": "A-117",
+        "Numerical ID": 117,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573464,
+          43.19574
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "Tree ID": "A-118",
+        "Numerical ID": 118,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573587,
+          43.195763
+        ]
+      },
+      "properties": {
+        "id": 119,
+        "Tree ID": "A-119",
+        "Numerical ID": 119,
+        "Botanical Name": "Picea glauca",
+        "Common Name": "White Spruce",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57351,
+          43.195671
+        ]
+      },
+      "properties": {
+        "id": 120,
+        "Tree ID": "A-120",
+        "Numerical ID": 120,
+        "Botanical Name": "Betula nigra",
+        "Common Name": "River Birch",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573608,
+          43.195669
+        ]
+      },
+      "properties": {
+        "id": 121,
+        "Tree ID": "A-121",
+        "Numerical ID": 121,
+        "Botanical Name": "Betula nigra",
+        "Common Name": "River Birch",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573752,
+          43.195578
+        ]
+      },
+      "properties": {
+        "id": 122,
+        "Tree ID": "A-122",
+        "Numerical ID": 122,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573894,
+          43.195568
+        ]
+      },
+      "properties": {
+        "id": 123,
+        "Tree ID": "A-123",
+        "Numerical ID": 123,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573994,
+          43.195608
+        ]
+      },
+      "properties": {
+        "id": 124,
+        "Tree ID": "A-124",
+        "Numerical ID": 124,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574006,
+          43.195721
+        ]
+      },
+      "properties": {
+        "id": 125,
+        "Tree ID": "A-125",
+        "Numerical ID": 125,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574054,
+          43.195784
+        ]
+      },
+      "properties": {
+        "id": 126,
+        "Tree ID": "A-126",
+        "Numerical ID": 126,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574172,
+          43.195851
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "Tree ID": "A-127",
+        "Numerical ID": 127,
+        "Botanical Name": "Platanus occidentalis",
+        "Common Name": "Sycamore",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574372,
+          43.196013
+        ]
+      },
+      "properties": {
+        "id": 128,
+        "Tree ID": "A-128",
+        "Numerical ID": 128,
+        "Botanical Name": "Fagus sylvatica",
+        "Common Name": "European Beech",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574606,
+          43.196025
+        ]
+      },
+      "properties": {
+        "id": 129,
+        "Tree ID": "A-129",
+        "Numerical ID": 129,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Apple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574377,
+          43.19618
+        ]
+      },
+      "properties": {
+        "id": 130,
+        "Tree ID": "A-130",
+        "Numerical ID": 130,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Apple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574173,
+          43.196226
+        ]
+      },
+      "properties": {
+        "id": 131,
+        "Tree ID": "A-131",
+        "Numerical ID": 131,
+        "Botanical Name": "Gymnocladus dioicus",
+        "Common Name": "Kentucky Coffee Tree",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574077,
+          43.196075
+        ]
+      },
+      "properties": {
+        "id": 132,
+        "Tree ID": "A-132",
+        "Numerical ID": 132,
+        "Botanical Name": "Crataegus sp.",
+        "Common Name": "Hawthorn",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573972,
+          43.196046
+        ]
+      },
+      "properties": {
+        "id": 133,
+        "Tree ID": "A-133",
+        "Numerical ID": 133,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574114,
+          43.195956
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "Tree ID": "A-134",
+        "Numerical ID": 134,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573895,
+          43.196099
+        ]
+      },
+      "properties": {
+        "id": 135,
+        "Tree ID": "A-135",
+        "Numerical ID": 135,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573904,
+          43.195976
+        ]
+      },
+      "properties": {
+        "id": 136,
+        "Tree ID": "A-136",
+        "Numerical ID": 136,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573821,
+          43.195868
+        ]
+      },
+      "properties": {
+        "id": 137,
+        "Tree ID": "A-137",
+        "Numerical ID": 137,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573679,
+          43.196111
+        ]
+      },
+      "properties": {
+        "id": 139,
+        "Tree ID": "A-139",
+        "Numerical ID": 139,
+        "Botanical Name": "Crataegus sp.",
+        "Common Name": "Hawthorn",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573556,
+          43.196168
+        ]
+      },
+      "properties": {
+        "id": 140,
+        "Tree ID": "A-140",
+        "Numerical ID": 140,
+        "Botanical Name": "Crataegus sp.",
+        "Common Name": "Hawthorn",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57341,
+          43.196185
+        ]
+      },
+      "properties": {
+        "id": 141,
+        "Tree ID": "A-141",
+        "Numerical ID": 141,
+        "Botanical Name": "Crataegus sp.",
+        "Common Name": "Hawthorn",
+        "DBH (inches)": 3.0,
+        "DBH Info": "3",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573567,
+          43.195975
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "Tree ID": "A-142",
+        "Numerical ID": 142,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 2.5,
+        "DBH Info": "2.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573529,
+          43.19591
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "Tree ID": "A-143",
+        "Numerical ID": 143,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 2.5,
+        "DBH Info": "2.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573808,
+          43.196069
+        ]
+      },
+      "properties": {
+        "id": 144,
+        "Tree ID": "A-144",
+        "Numerical ID": 144,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57332,
+          43.195907
+        ]
+      },
+      "properties": {
+        "id": 145,
+        "Tree ID": "A-145",
+        "Numerical ID": 145,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 2.5,
+        "DBH Info": "2.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573339,
+          43.196165
+        ]
+      },
+      "properties": {
+        "id": 146,
+        "Tree ID": "A-146",
+        "Numerical ID": 146,
+        "Botanical Name": "Abies concolor",
+        "Common Name": "White Fir",
+        "DBH (inches)": 30.0,
+        "DBH Info": "30",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573492,
+          43.19633
+        ]
+      },
+      "properties": {
+        "id": 147,
+        "Tree ID": "A-147",
+        "Numerical ID": 147,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 12.0,
+        "DBH Info": "12",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573468,
+          43.196479
+        ]
+      },
+      "properties": {
+        "id": 148,
+        "Tree ID": "A-148",
+        "Numerical ID": 148,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 24.0,
+        "DBH Info": "24",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573684,
+          43.196379
+        ]
+      },
+      "properties": {
+        "id": 149,
+        "Tree ID": "A-149",
+        "Numerical ID": 149,
+        "Botanical Name": "Cercidiphyllum japonicum",
+        "Common Name": "Katsura Tree",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573887,
+          43.196329
+        ]
+      },
+      "properties": {
+        "id": 150,
+        "Tree ID": "A-150",
+        "Numerical ID": 150,
+        "Botanical Name": "Cercidiphyllum japonicum",
+        "Common Name": "Katsura Tree",
+        "DBH (inches)": 15.0,
+        "DBH Info": "15",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573258,
+          43.196318
+        ]
+      },
+      "properties": {
+        "id": 156,
+        "Tree ID": "A-156",
+        "Numerical ID": 156,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573258,
+          43.196282
+        ]
+      },
+      "properties": {
+        "id": 155,
+        "Tree ID": "A-155",
+        "Numerical ID": 155,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573263,
+          43.196242
+        ]
+      },
+      "properties": {
+        "id": 154,
+        "Tree ID": "A-154",
+        "Numerical ID": 154,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573266,
+          43.196156
+        ]
+      },
+      "properties": {
+        "id": 153,
+        "Tree ID": "A-153",
+        "Numerical ID": 153,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573264,
+          43.1961
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "Tree ID": "A-152",
+        "Numerical ID": 152,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573263,
+          43.196208
+        ]
+      },
+      "properties": {
+        "id": 151,
+        "Tree ID": "A-151",
+        "Numerical ID": 151,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573251,
+          43.19637
+        ]
+      },
+      "properties": {
+        "id": 157,
+        "Tree ID": "A-157",
+        "Numerical ID": 157,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573605,
+          43.195883
+        ]
+      },
+      "properties": {
+        "id": 138,
+        "Tree ID": "A-138",
+        "Numerical ID": 138,
+        "Botanical Name": "Ulmus americana",
+        "Common Name": "American Elm",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573081,
+          43.196472
+        ]
+      },
+      "properties": {
+        "id": 159,
+        "Tree ID": "A-159",
+        "Numerical ID": 159,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573084,
+          43.196422
+        ]
+      },
+      "properties": {
+        "id": 158,
+        "Tree ID": "A-158",
+        "Numerical ID": 158,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573083,
+          43.196377
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "Tree ID": "A-017",
+        "Numerical ID": 17,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 4.0,
+        "DBH Info": "4",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57309,
+          43.196304
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "Tree ID": "A-016",
+        "Numerical ID": 16,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573089,
+          43.196256
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "Tree ID": "A-015",
+        "Numerical ID": 15,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573092,
+          43.196205
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "Tree ID": "A-014",
+        "Numerical ID": 14,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 5.0,
+        "DBH Info": "5",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573093,
+          43.196141
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "Tree ID": "A-013",
+        "Numerical ID": 13,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573033,
+          43.195883
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "Tree ID": "A-012",
+        "Numerical ID": 12,
+        "Botanical Name": "Amelarchier canadensis",
+        "Common Name": "Serviceberry",
+        "DBH (inches)": 1.5,
+        "DBH Info": "1.5",
+        "General Health": "P",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.573013,
+          43.195661
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "Tree ID": "A-011",
+        "Numerical ID": 11,
+        "Botanical Name": "Acer rubrum",
+        "Common Name": "Red Maple",
+        "DBH (inches)": 3.5,
+        "DBH Info": "3.5",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574984,
+          43.196418
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "Tree ID": "A-160",
+        "Numerical ID": 160,
+        "Botanical Name": "Magnolia loebneri",
+        "Common Name": "Saucer Magnolia",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "G",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574307,
+          43.195647
+        ]
+      },
+      "properties": {
+        "id": 161,
+        "Tree ID": "A-161",
+        "Numerical ID": 161,
+        "Botanical Name": "Malus sp.",
+        "Common Name": "Crabapple",
+        "DBH (inches)": 8.0,
+        "DBH Info": "8",
+        "General Health": "F",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574021,
+          43.19598
+        ]
+      },
+      "properties": {
+        "id": 162,
+        "Tree ID": "A-162",
+        "Numerical ID": 162,
+        "Botanical Name": "Picea abies",
+        "Common Name": "Norway Spruce",
+        "DBH (inches)": 6.0,
+        "DBH Info": "6",
+        "General Health": "E",
+        "Memorial Tree": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.574163,
+          43.196042
+        ]
+      },
+      "properties": {
+        "id": 163,
+        "Tree ID": "A-163",
+        "Numerical ID": 163,
+        "Botanical Name": "Acer saccharum",
+        "Common Name": "Sugar Maple",
+        "DBH (inches)": 36.0,
+        "DBH Info": "36",
+        "General Health": "VG",
+        "Memorial Tree": ""
+      }
+    }
+  ]
+}
