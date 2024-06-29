@@ -2,22 +2,23 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvb
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/pianoman24/clxcb94sn09r301ql605egwtc',
+    style: 'mapbox://styles/pianoman24/clxddq2my002c01qo8oc10owh',
     center: [-71.58, 43.190409], // default center [lng, lat]
     zoom: 13.78, // default zoom
     pitch: 0,
     bearing: 0
 });
 
-/*
 // Function to update the layer visibility based on zoom level
 function updateLayerVisibility() {
     var zoom = map.getZoom();
     if (zoom >= 15) {
-        map.setLayoutProperty('trees-layer', 'visibility', 'visible')
+        map.setPaintProperty('trees-layer', 'circle-opacity', 1, {
+            'duration': 500
+        });
     } else {
         map.setPaintProperty('trees-layer', 'circle-opacity', 0, {
-            'duration': 2000
+            'duration': 500
         });
     }
 }
@@ -26,7 +27,6 @@ function updateLayerVisibility() {
 map.on('zoom', function() {
     updateLayerVisibility();
 });
-*/
 
 fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trails_demo.geojson')
     .then(response => response.json())
@@ -87,17 +87,20 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
                 'id': 'trees-layer',
                 'type': 'circle',
                 'source': 'points',
+                'slot': 'middle',
                 'paint': {
                     // Circle radius changes with zoom level
                     'circle-radius': {
-                        'base': 1,
+                        'base': 2,
                         'stops': [
-                            [12, 2],
-                            [16, 5],
-                            [22, 12]
+                            [15, 2],
+                            [17, 4],
+                            [22, 40]
                         ]
                     },
                     'circle-color': '#008800', // Green color
+                    'circle-pitch-scale': 'map', // Scale circles with the map
+                    'circle-pitch-alignment': 'map' // Align circles with the map pitch
                 },
                 'minzoom': 14
             });
@@ -134,120 +137,120 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
 
             // Create a legend
             const legend = document.getElementById('legend');
-                const trails = {};
+            const trails = {};
 
 
-                data.features.forEach((feature, index) => {
-                    console.log("building legend");
-                    const blaze = feature.properties.blaze || '#006400';
-                    const name = feature.properties.name || 'Unknown';
-                    const letter = String.fromCharCode(65 + index); // Generate letters A, B, C, etc.
+            data.features.forEach((feature, index) => {
+                console.log("building legend");
+                const blaze = feature.properties.blaze || '#006400';
+                const name = feature.properties.name || 'Unknown';
+                const letter = String.fromCharCode(65 + index); // Generate letters A, B, C, etc.
 
-                    if (feature.properties.name && feature.properties.informal !== 'yes') {
-                        if (!trails[name]) {
-                            trails[name] = blaze;
+                if (feature.properties.name && feature.properties.informal !== 'yes') {
+                    if (!trails[name]) {
+                        trails[name] = blaze;
 
-                            const item = document.createElement('div');
-                            item.className = 'legend-item';
-                            item.dataset.name = name;
-                            item.innerHTML = `
+                        const item = document.createElement('div');
+                        item.className = 'legend-item';
+                        item.dataset.name = name;
+                        item.innerHTML = `
                 <div class="legend-color" style="color: ${blaze};">
                     <!-- <span>${letter}</span> -->
                 </div>
                 <div>${name}</div>
             `;
-                            legend.appendChild(item);
-                        }
+                        legend.appendChild(item);
                     }
-                });
-
-                map.addLayer({
-                    'id': 'trail-labels',
-                    'type': 'symbol',
-                    'source': 'trails',
-                    'layout': {
-                        'symbol-placement': 'line',
-                        'text-field': ['get', 'name'], // Assuming 'label' is the property containing the letter
-                        'text-size': 12,
-                        'text-font': ['Roboto Bold'], // Use the desired font
-                        'text-keep-upright': true
-                    },
-                    'paint': {
-                        'text-color': 'black',
-                        'text-halo-color': 'white',
-                        'text-halo-width': 1
-                    },
-                    'filter': ['all',
-                        ['!=', ['get', 'trail_type'], 'streamed']
-                    ]
-                });
-
-
-                /*
-                            // Extract start and end points from the trails
-                            const markerFeatures = [];
-                            data.features.forEach(feature => {
-                                const coordinates = feature.geometry.coordinates;
-                                if (coordinates.length > 0) {
-                                    const start = coordinates[0];
-                                    const end = coordinates[coordinates.length - 1];
-                                    markerFeatures.push({
-                                        type: 'Feature',
-                                        geometry: {
-                                            type: 'Point',
-                                            coordinates: start
-                                        },
-                                        properties: {
-                                            type: 'start'
-                                        }
-                                    });
-                                    markerFeatures.push({
-                                        type: 'Feature',
-                                        geometry: {
-                                            type: 'Point',
-                                            coordinates: end
-                                        },
-                                        properties: {
-                                            type: 'end'
-                                        }
-                                    });
-                                }
-                            });
-                
-                            // Add the markers as a source
-                            map.addSource('trail-markers', {
-                                type: 'geojson',
-                                data: {
-                                    type: 'FeatureCollection',
-                                    features: markerFeatures
-                                }
-                            });
-                
-                            // Add the markers as a layer
-                            map.addLayer({
-                                'id': 'trail-markers-layer',
-                                'type': 'circle',
-                                'source': 'trail-markers',
-                                'paint': {
-                                    'circle-radius': 3,
-                                    'circle-color': [
-                                        'match',
-                                        ['get', 'type'],
-                                        'start', '#f00', // Red for start points
-                                        'end', '#00f',   // Blue for end points
-                                    ]
-                                }
-                            });
-                */
+                }
             });
-        })
-            .catch(error => {
-                console.error('Error loading the GeoJSON data:', error);
+
+            map.addLayer({
+                'id': 'trail-labels',
+                'type': 'symbol',
+                'source': 'trails',
+                'layout': {
+                    'symbol-placement': 'line',
+                    'text-field': ['get', 'name'], // Assuming 'label' is the property containing the letter
+                    'text-size': 12,
+                    'text-font': ['Roboto Bold'], // Use the desired font
+                    'text-keep-upright': true
+                },
+                'paint': {
+                    'text-color': 'black',
+                    'text-halo-color': 'white',
+                    'text-halo-width': 1
+                },
+                'filter': ['all',
+                    ['!=', ['get', 'trail_type'], 'streamed']
+                ]
             });
 
 
+            /*
+                        // Extract start and end points from the trails
+                        const markerFeatures = [];
+                        data.features.forEach(feature => {
+                            const coordinates = feature.geometry.coordinates;
+                            if (coordinates.length > 0) {
+                                const start = coordinates[0];
+                                const end = coordinates[coordinates.length - 1];
+                                markerFeatures.push({
+                                    type: 'Feature',
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: start
+                                    },
+                                    properties: {
+                                        type: 'start'
+                                    }
+                                });
+                                markerFeatures.push({
+                                    type: 'Feature',
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: end
+                                    },
+                                    properties: {
+                                        type: 'end'
+                                    }
+                                });
+                            }
+                        });
+            
+                        // Add the markers as a source
+                        map.addSource('trail-markers', {
+                            type: 'geojson',
+                            data: {
+                                type: 'FeatureCollection',
+                                features: markerFeatures
+                            }
+                        });
+            
+                        // Add the markers as a layer
+                        map.addLayer({
+                            'id': 'trail-markers-layer',
+                            'type': 'circle',
+                            'source': 'trail-markers',
+                            'paint': {
+                                'circle-radius': 3,
+                                'circle-color': [
+                                    'match',
+                                    ['get', 'type'],
+                                    'start', '#f00', // Red for start points
+                                    'end', '#00f',   // Blue for end points
+                                ]
+                            }
+                        });
+            */
+        });
+    })
+    .catch(error => {
+        console.error('Error loading the GeoJSON data:', error);
+    });
 
-        let selectedTrail = null;
+
+
+let selectedTrail = null;
 
 // Add interactive pop-ups for trails
 map.on('click', 'trail-layer', (e) => {
