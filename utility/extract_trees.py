@@ -7,6 +7,8 @@ import os
 from scipy.spatial import distance
 import numpy as np
 from scipy.optimize import linear_sum_assignment
+import pandas as pd
+import re
 
 # Supported zones and page numbers in tree inventory pdf
 zones = ['a']
@@ -14,6 +16,27 @@ page_nums = [4]
 
 # File path to tree inventory
 inventory_path = "tree_inventory.pdf"
+
+import geojson
+
+def create_geojson_feature(lat, lon, text_label, properties):
+    """
+    Create a GeoJSON feature.
+
+    Args:
+    - lat (float): Latitude coordinate.
+    - lon (float): Longitude coordinate.
+    - text_label (str): Text label for the feature.
+    - properties (dict): Additional properties for the feature.
+
+    Returns:
+    - geojson.Feature: A GeoJSON feature.
+    """
+    feature = geojson.Feature(
+        geometry=geojson.Point((lon, lat)),
+        properties={"id": text_label, **properties}
+    )
+    return feature
 
 def pdf_to_geo(bounds, x, y):
     """
@@ -43,40 +66,28 @@ def pdf_to_geo(bounds, x, y):
     
     return lat, lon
 
-def create_geojson_feature(lat, lon, label):
+def save_geojson(assignments, bounds, table_data, output_file_path):
     """
-    Create a GeoJSON feature for a given latitude, longitude, and text label.
-    
-    Args:
-    - lat (float): Latitude.
-    - lon (float): Longitude.
-    - text_label (str): Text label to store in the 'id' field.
-    
-    Returns:
-    - feature (geojson.Feature): The GeoJSON feature.
-    """
-    feature = geojson.Feature(
-        geometry=geojson.Point((lon, lat)),
-        properties={"id": label}
-    )
-    return feature
+    Save assignments and table data as GeoJSON features to a file.
 
-def save_geojson(assignments, bounds, output_file_path):
-    """
-    Save assignments as GeoJSON features to a file.
-    
     Args:
     - assignments (list): List of assignments with PDF coordinates and labels.
     - bounds (dict): Dictionary containing the bounds information.
+    - table_data (list): List of dictionaries containing table data.
     - output_file_path (str): Path to the output GeoJSON file.
     """
     features = []
     for assignment in assignments:
         pdf_y, pdf_x = assignment['coords']
         lat, lon = pdf_to_geo(bounds, pdf_x, pdf_y)
-        text_label = assignment['n']
-        feature = create_geojson_feature(lat, lon, text_label)
-        features.append(feature)
+        numerical_id = assignment['n']
+        
+        # Find the corresponding table data entry
+        table_entry = next((item for item in table_data if item['Numerical ID'] == numerical_id), None)
+        
+        if table_entry:
+            feature = create_geojson_feature(lat, lon, numerical_id, table_entry)
+            features.append(feature)
     
     feature_collection = geojson.FeatureCollection(features)
     
@@ -166,7 +177,44 @@ def generate_assignments(labels, dots):
     
     return assignments
 
-def process_zone(page_num, zone):    
+def extract_table_data(start_page, end_page):
+    # Open the PDF
+    document = fitz.open(inventory_path)
+    text = ""
+    
+    # Extract text from specified page range
+    for page_num in range(start_page-1, end_page):
+        page = document.load_page(page_num)
+        text += page.get_text()
+
+    # Define a regex pattern to match table rows
+    pattern = re.compile(r"([A-Z]-\d{3})\s+(.*?)\s+(.*?)\s+(\d+(\.\d+)?)\s*([A-Z]*)\s*(.*?)\s*(.*?)")
+
+    # Find all matches
+    matches = pattern.findall(text)
+
+    # Create a list of dictionaries to hold table data
+    table_data = []
+    for match in matches:
+        tree_id = match[0]
+        numerical_id = int(tree_id.split('-')[1])
+        table_data.append({
+            "Tree ID": tree_id,
+            "Numerical ID": numerical_id,
+            "Botanical Name": match[1].strip(),
+            "Common Name": match[2].strip(),
+            "DBH (inches)": match[3].strip(),
+            "General Health": match[4].strip(),
+            "Memorial Tree": match[5].strip(),
+            "Notes": match[6].strip()
+        })
+
+    for row in table_data:
+        print(row)
+        
+    return table_data
+
+def process_zone(page_num, zone, page_range: tuple):    
     if zone not in zones:
         raise ValueError(f'Zone {zone} not supported (supported: {zones})')
     
@@ -203,6 +251,7 @@ def process_zone(page_num, zone):
         bounds = data["bounds"]
     
     assignments = generate_assignments(labels, dots)
+    table_data = extract_table_data(page_range[0], page_range[1])
     
     answer = input('Write assignments to file? (y/n)')
     if answer in ['y', 'yes', 'Y', 'YES']:
@@ -213,6 +262,12 @@ def process_zone(page_num, zone):
     answer = input('Write lat/lon data to file? (y/n)')
     if answer in ['y', 'yes', 'Y', 'YES']:
         geo_path = f'tree_extractions/zone_{zone}.geojson'
-        save_geojson(assignments, bounds, geo_path)
+        save_geojson(assignments, bounds, table_data, geo_path)
 
-process_zone(4, 'a')
+# Specify the range of pages to extract
+start_page = 5
+end_page = 16
+
+# extract_table_data(inventory_path, start_page, end_page)
+
+process_zone(4, 'a', (5, 16))

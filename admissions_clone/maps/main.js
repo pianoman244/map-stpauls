@@ -9,6 +9,17 @@ const map = new mapboxgl.Map({
     bearing: 0
 });
 
+let path;
+if (window.location.protocol === 'file:') {
+    console.log('Running on local machine');
+    path = "http://localhost:8000/"
+    // You can also set specific variables or execute code meant for local development here
+} else {
+    path = "https://pianoman244.github.io/map-stpauls/"
+    console.log('Running on the web');
+    // You can also set specific variables or execute code meant for web deployment here
+}
+
 // Function to update the layer visibility based on zoom level
 function updateLayerVisibility() {
     var zoom = map.getZoom();
@@ -28,7 +39,7 @@ map.on('zoom', function() {
     updateLayerVisibility();
 });
 
-fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trails_demo.geojson')
+fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
     .then(response => response.json())
     .then(data => {
         // Add the trail data as a source
@@ -37,12 +48,6 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
                 type: 'geojson',
                 data: data // Use the fetched GeoJSON data
             });
-
-            /*
-            map.addSource('observatory-trails', {
-                type: 'geojson',
-                data: "http://localhost:8000/maps/data/observatory_trails.geojson" // Use the fetched GeoJSON data
-            });*/
 
             map.addLayer({
                 'id': 'trail-layer',
@@ -79,7 +84,7 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
 
             map.addSource('points', {
                 'type': 'geojson',
-                'data': 'https://pianoman244.github.io/map-stpauls/utility/tree_extractions/zone_a.geojson' // Path to your GeoJSON file
+                'data': path + 'utility/tree_extractions/zone_a.geojson' // Path to your GeoJSON file
             });
 
             // Add a circle layer
@@ -90,14 +95,13 @@ fetch('https://pianoman244.github.io/map-stpauls/admissions_clone/maps/data/trai
                 'slot': 'middle',
                 'paint': {
                     // Circle radius changes with zoom level
-                    'circle-radius': {
-                        'base': 2,
-                        'stops': [
-                            [15, 2],
-                            [17, 4],
-                            [22, 40]
-                        ]
-                    },
+                    'circle-radius': [
+                        'interpolate',
+                        ['exponential', 1.8],
+                        ['zoom'],
+                        15, ['*', ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 1/4], 1],
+                        22, ['*', ['^', ['coalesce', ['to-number', ['get', 'DBH (inches)']], 8], 1/4], 40]
+                    ],
                     'circle-color': '#008800', // Green color
                     'circle-pitch-scale': 'map', // Scale circles with the map
                     'circle-pitch-alignment': 'map' // Align circles with the map pitch
@@ -328,11 +332,27 @@ map.on('click', (e) => {
 // Add a popup when a circle is clicked
 map.on('click', 'trees-layer', function (e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.id;
+    const properties = e.features[0].properties;
+    console.log('Feature properties:', properties); // Debugging line
 
+    // Construct the HTML for the popup
+    const popupHTML = `
+    <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
+    <strong>Botanical Name:</strong> ${properties["Botanical Name"]}<br>
+    <strong>Common Name:</strong> ${properties["Common Name"]}<br>
+    <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}<br>
+    <strong>General Health:</strong> ${properties["General Health"]}<br>
+    <strong>Memorial Tree:</strong> ${properties["Memorial Tree"]}<br>
+    <strong>Notes:</strong> ${properties["Notes"]}
+    `;
+
+    // Ensure the popup appears over the correct location
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
     new mapboxgl.Popup()
         .setLngLat(coordinates)
-        .setHTML(description)
+        .setHTML(popupHTML)
         .addTo(map);
 });
 
