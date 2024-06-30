@@ -270,7 +270,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 map.getCanvas().style.cursor = '';
                 if (!isInfoBoxFixed) {
                     infoBox.className = 'default';
-                    infoBox.innerHTML = 'Hover over a tree to see its details.';
+                    infoBox.innerHTML = 'Select a tree!  &#x1F333;  &#x1F535;  &#x1F7E2;  &#x1F7E1;';
                 }
             });
 
@@ -284,7 +284,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 if (features.length === 0) {
                     isInfoBoxFixed = false;
                     infoBox.className = 'default';
-                    infoBox.innerHTML = 'Hover over a tree to see its details.';
+                    infoBox.innerHTML = 'Select a tree!  &#x1F333;  &#x1F535;  &#x1F7E2;  &#x1F7E1;';
                 }
             });
 
