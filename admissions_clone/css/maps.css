@@ -204,3 +204,33 @@
         font-size: 1.5em;
     }
 }
+
+#info-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ffffff;
+    /* White background for modern look */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Editor', 'Georgia', sans-serif;
+    /* Modern font */
+    font-size: 2vh;
+    color: #333333;
+    /* Darker text color */
+}
+
+.popup-content {
+    background: #ffffff;
+    /* White background for modern look */
+    padding: 5px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    font-family: 'Editor', 'Georgia', sans-serif;
+    /* Modern font */
+    font-size: 2vh;
+    color: #333333;
+    max-width: 160px;
+    /* Darker text color */
+}

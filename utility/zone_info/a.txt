@@ -171,12 +171,12 @@ General
 Health  (3)
 Memorial Tree
 Notes
-A-29
+A-029
 Picea abies
 Norway Spruce
 6
 E
-A-30
+A-030
 Acer nigrum
 Black Maple
 15
@@ -238,7 +238,7 @@ Saucer Magnolia
 E
 Form of 1999
 A-042
-Picea
+Picea sp.
 Spruce
 36
 E
@@ -274,7 +274,7 @@ Crabapple
 1.5
 E
 A-047
-Quercus 
+Quercus sp.
 Oak
 8
 E
@@ -478,6 +478,7 @@ E
 A-083
 Taccus baccata
 English Yew Hedge
+8
 E
 A-084
 Ulmus americana
@@ -507,8 +508,7 @@ Sugar Maple
 F
 A-087
 Tsuga canadensis
-Weeping Eastern 
-Hemlock
+Weeping Eastern Hemlock
 8
 E
 A-088
@@ -521,7 +521,7 @@ Acer saccharum
 Sugar Maple
 7
 E
-A-90
+A-090
 Ulmus americana
 American Elm
 4
@@ -542,8 +542,7 @@ Sugar Maple
 24
 F
 A-094
-Ulmus glabra 
-'Camperdownii'
+Ulmus glabra 'Camperdownii'
 Camperdown Elm
 12
 E

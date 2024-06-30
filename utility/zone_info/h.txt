@@ -1,0 +1,456 @@
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-001
+Pyrus calleryana
+Bradford Pear
+4"
+E
+H-002
+Pyrus calleryana
+Bradford Pear
+4"
+E
+H-003
+Pyrus calleryana
+Bradford Pear
+4"
+E
+H-004
+Acer rubrum
+Red Maple
+3"
+VG
+H-005
+Pinus nigra
+Austrian Pine
+6"
+F
+H-006
+Pinus nigra
+Austrian Pine
+6"
+G
+H-007
+Acer rubrum
+Red Maple
+4"
+VG
+H-008
+Acer rubrum
+Red Maple
+4"
+VG
+H-009
+Tilia cordata
+Littleleaf Linden
+4"
+E
+H-010
+Tilla cordata
+Littleleaf Linden
+4"
+E
+H-011
+Tilia cordata
+Littleleaf Linden
+4"
+E
+H-012
+Tilia cordata
+Littleleaf Linden
+4"
+E
+H-013
+Tilia cordata
+Littleleaf Linden
+4"
+E
+H-014
+Tilia cordata
+Littleleaf Linden
+4"
+E
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-015
+Pinus strobus
+Eastern White Pine
+8"
+E
+H-016
+Pinus strobus
+Eastern White Pine
+8"
+E
+H-017
+Pinus strobus
+Eastern White Pine
+8"
+E
+H-018
+Acer rubrum
+Red Maple
+4"
+E
+H-019
+Pinus nigra
+Austrian Pine
+8"
+VG
+H-020
+Acer rubrum
+Red Maple
+3"
+G
+H-021
+Acer rubrum
+Red Maple
+4"
+E
+H-022
+Acer rubrum
+Red Maple
+4"
+E
+H-023
+Pinus nigra
+Austrian Pine
+8"
+G
+H-024
+Pinus nigra
+Austrian Pine
+8"
+VG
+H-025
+Pinus strobus
+Eastern White Pine
+8"
+E
+H-026
+Acer saccharum
+Sugar Maple
+48"
+F
+H-027
+Acer saccharum
+Sugar Maple
+Dbl. Stem 36"
+P
+H-028
+Acer saccharum
+Sugar Maple
+24"
+F
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-029
+Quercus alba
+White Oak
+Dbl. Stem 36"
+VG
+H-030
+Pinus strobus
+Eastern White Pine
+30"
+P
+H-031
+Acer saccharum
+Sugar Maple
+24"
+G
+H-032
+Pinus strobus
+Eastern White Pine
+42"
+F
+H-033
+Acer saccharum
+Sugar Maple
+12"
+F
+H-034
+Acer saccharum
+Sugar Maple
+18"
+G
+H-035
+Acer saccharum
+Sugar Maple
+24"
+G
+H-036
+Acer saccharum
+Sugar Maple
+36"
+F
+H-037
+Acer saccharum
+Sugar Maple
+18"
+G
+H-038
+Acer saccharum
+Sugar Maple
+10"
+F
+H-039
+Acer saccharum
+Sugar Maple
+12"
+G
+H-040
+Acer saccharum
+Sugar Maple
+Dbl. Stem 18"
+G
+H-041
+Acer saccharum
+Sugar Maple
+Dbl. Stem 24"
+P
+H-042
+Acer saccharum
+Sugar Maple
+24"
+VG
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-043
+Ulmus americana
+American Elm
+4"
+E
+H-044
+Cornuus florida
+Flowering Dogwood
+3"
+G
+H-045
+Cornuus florida
+Flowering Dogwood
+3"
+G
+H-046
+Betula papyrifera
+Paper Birch
+Multi-Stem 2"
+VG
+H-047
+Quercus rubra
+Red Oak
+3"
+VG
+H-048
+Ulmus americana
+American Elm
+3"
+VG
+H-049
+Catalpa speciosa
+Northern Catalpa
+Dbl. Stem 30"
+E
+H-050
+Acer saccharum
+Sugar Maple
+24" 
+VG
+H-051
+Amelanchier canadensis
+Serviceberry
+12"
+VG
+H-052
+Pinus strobus
+Eastern White Pine
+24"
+VG
+H-053
+Abies balsamea
+Balsam Fir
+30"
+G
+H-054
+Abies balsamea
+Balsam Fir
+30"
+F
+H-055
+Abies balsamea
+Balsam Fir
+30"
+F
+H-056
+Abies balsamea
+Balsam Fir
+30"
+P
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-057
+Acer saccharum
+Sugar Maple
+18"
+F
+H-058
+Ulmus americana
+American Elm
+Dbl. Stem 8"
+G
+H-059
+Acer saccharum
+Sugar Maple
+4"
+VG
+H-060
+Acer saccharum
+Sugar Maple
+10"
+VG
+H-061
+Acer saccharum
+Sugar Maple
+8"
+G
+H-062
+Acer saccharum
+Sugar Maple
+10"
+G
+H-063
+Juglans cinerea
+Butternut
+15"
+G
+H-064
+Acer saccharum
+Sugar Maple
+6"
+VG
+H-065
+Acer saccharum
+Sugar Maple
+6"
+VG
+H-066
+Acer saccharum
+12"
+10"
+VG
+H-067
+Acer saccharum
+Sugar Maple
+6"
+VG
+H-068
+Acer saccharum
+Sugar Maple
+Dbl. Stem 4"
+F
+H-069
+Pinus strobus
+Eastern White Pine
+36"
+F
+H-070
+Pinus strobus
+Eastern White Pine
+30"
+F
+TREE LIST FOR THE ST. PAUL'S GROUNDS
+Horticultural Observations
+Tree #
+Botanical Name
+Common Name
+DBH              
+(inches)
+General 
+Health  (3)
+Memorial Tree
+Notes
+H-071
+Pinus strobus
+Eastern White Pine
+30"
+F
+H-072
+Pinus strobus
+Eastern White Pine
+24"
+F
+H-073
+Pinus strobus
+Eastern White Pine
+27"
+F
+H-074
+Pinus strobus
+Eastern White Pine
+27"
+F
+H-075
+Pinus strobus
+Eastern White Pine
+27"
+F
+H-076
+Acer saccharum
+Sugar Maple
+18"
+F
+H-077
+Acer saccharum
+Sugar Maple
+18"
+F
+H-078
+Acer saccharum
+Sugar Maple
+Dbl. Stem 12"
+P

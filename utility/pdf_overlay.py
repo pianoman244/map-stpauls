@@ -69,18 +69,20 @@ def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path):
     with open(output_pdf_path, 'wb') as f:
         writer.write(f)
 
-path = 'tree_extractions/zone_a.json'
-with open(path, 'r') as file:
-    assignments = json.load(file)['assignments']
+def create_zone_overlay(letter, page_num):
+    page_num_zero_indexed = page_num - 1
+    
+    path = f'tree_extractions/zone_{letter}.json'
+    with open(path, 'r') as file:
+        assignments = json.load(file)['assignments']
 
-# Paths
-original_pdf_path = 'tree_inventory.pdf'
-page_num = 3 # zero-indexed
-overlay_pdf_path = 'overlay.pdf'
-output_pdf_path = 'zone_a_overlay.pdf'
+    # Paths
+    original_pdf_path = 'tree_inventory.pdf'
+    overlay_pdf_path = 'pdf_overlays/zone_c_overlay.pdf'
+    output_pdf_path = f'pdf_overlays/zone_{letter}.pdf'
 
-# Create the overlay PDF
-create_overlay(assignments, overlay_pdf_path)
+    # Create the overlay PDF
+    create_overlay(assignments, overlay_pdf_path)
 
-# Merge the overlay with the original PDF
-merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path)
+    # Merge the overlay with the original PDF
+    merge_pdfs(original_pdf_path, page_num_zero_indexed, overlay_pdf_path, output_pdf_path)

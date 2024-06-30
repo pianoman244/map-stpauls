@@ -35,7 +35,7 @@ function updateLayerVisibility() {
 }
 
 // Update layer visibility on zoom events
-map.on('zoom', function() {
+map.on('zoom', function () {
     updateLayerVisibility();
 });
 
@@ -87,6 +87,18 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 'data': path + 'utility/tree_extractions/all_trees.geojson'
             });
 
+            // Define the colors for each zone
+            const colorMapping = {
+                'A': 'rgba(191, 105, 108, 1)', // Red
+                'B': 'rgba(111, 194, 193, 1)', // Cyan
+                'C': 'rgba(109, 136, 108, 1)', // Dark green
+                'D': 'rgba(222, 195, 108, 1)', // Yellow
+                'E': 'rgba(110, 166, 108, 1)', // Light green
+                'F': 'rgba(186, 154, 154, 1)', // Gray
+                'G': 'rgba(108, 134, 163, 1)', // Blue
+                'H': 'rgba(159, 160, 134, 1)'  // Tan
+            };
+
             // Add a circle layer
             map.addLayer({
                 'id': 'trees-layer',
@@ -110,7 +122,20 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                         15, ['*', 1, ['^', ['to-number', ['get', 'DBH (inches)'], 8], 0.3]],
                         22, ['*', 20, ['^', ['to-number', ['get', 'DBH (inches)'], 8], 0.3]]
                     ],
-                    'circle-color': '#008800', // Green color
+                    // Define the circle color based on the first character of Tree ID
+                    'circle-color': [
+                        'match',
+                        ['slice', ['get', 'Tree ID'], 0, 1],
+                        'A', colorMapping['A'],
+                        'B', colorMapping['B'],
+                        'C', colorMapping['C'],
+                        'D', colorMapping['D'],
+                        'E', colorMapping['E'],
+                        'F', colorMapping['F'],
+                        'G', colorMapping['G'],
+                        'H', colorMapping['H'],
+                        /* default */ '#FFFFFF' // Default to white if none match
+                    ],
                     'circle-pitch-scale': 'map', // Scale circles with the map
                     'circle-pitch-alignment': 'map', // Align circles with the map pitch
                     'circle-stroke-width': 1,
@@ -118,36 +143,6 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 },
                 'minzoom': 14
             });
-
-
-            /*
-            map.addLayer({
-                'id': 'observatory-layer',
-                'type': 'line',
-                'source': 'observatory-trails',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#000000',
-                    'line-width': [
-                        'case',
-                        ['==', ['get', 'informal'], 'yes'],
-                        4, // Dotted line pattern for informal trails
-                        2  // Solid line pattern for formal trails
-                    ],
-                    'line-dasharray': [
-                        'case',
-                        ['==', ['get', 'informal'], 'yes'],
-                        [2, 2], // Dotted line pattern for informal trails
-                        [1, 0]  // Solid line pattern for formal trails
-                    ]
-                },
-                'filter': ['all',
-                    ['!=', ['get', 'trail_type'], 'streamed']
-                ]
-            });*/
 
             // Create a legend
             const legend = document.getElementById('legend');
@@ -197,6 +192,62 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 'filter': ['all',
                     ['!=', ['get', 'trail_type'], 'streamed']
                 ]
+            });
+
+            // Initialize the info box element
+            const infoBox = document.getElementById('info-box');
+
+            // Flag to determine if the info box is fixed
+            let isInfoBoxFixed = false;
+
+            // Variable to store the fixed info content
+            let fixedInfoContent = '';
+
+            // Add mousemove event listener to the trees layer
+            map.on('mousemove', 'trees-layer', (e) => {
+                if (!isInfoBoxFixed) {
+                    const properties = e.features[0].properties;
+                    infoBox.innerHTML = `
+                        <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
+                        <strong>Botanical Name:</strong> ${properties["Botanical Name"]}<br>
+                        <strong>Common Name:</strong> ${properties["Common Name"]}<br>
+                        <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}
+                    `;
+                }
+            });
+
+            // Add click event listener to the trees layer
+            map.on('click', 'trees-layer', (e) => {
+                const properties = e.features[0].properties;
+                fixedInfoContent = `
+                    <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
+                    <strong>Botanical Name:</strong> ${properties["Botanical Name"]}<br>
+                    <strong>Common Name:</strong> ${properties["Common Name"]}<br>
+                    <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}
+                `;
+                infoBox.innerHTML = fixedInfoContent;
+                isInfoBoxFixed = true;
+            });
+
+            // Add mouseleave event listener to reset the info box when the mouse leaves the trees layer
+            map.on('mouseleave', 'trees-layer', () => {
+                map.getCanvas().style.cursor = '';
+                if (!isInfoBoxFixed) {
+                    infoBox.innerHTML = 'Hover over a tree to see its details.';
+                }
+            });
+
+            // Add an event listener to reset the info box when clicking outside of a tree
+            map.on('click', (e) => {
+                // Check if the click was outside the trees-layer
+                const features = map.queryRenderedFeatures(e.point, {
+                    layers: ['trees-layer']
+                });
+
+                if (features.length === 0) {
+                    isInfoBoxFixed = false;
+                    infoBox.innerHTML = 'Hover over a tree to see its details.';
+                }
             });
 
 
@@ -272,12 +323,11 @@ map.on('click', 'trail-layer', (e) => {
     const coordinates = e.lngLat;
 
     // Create a pop-up content from trail properties
-    const popupContent = `
+    const popupContent = `<div class="popup-content">
     <strong>Trail Name:</strong> ${properties.name || 'Unknown'}<br>
-    <strong>Operator:</strong> ${properties.operator || 'Unknown'}<br>
-    <strong>Surface:</strong> ${properties.surface || 'Unknown'}<br>
-    <strong>Winter Service:</strong> ${properties.winter_service || 'Unknown'}
-`;
+    <strong>Blaze:</strong> ${properties.blaze || 'Unknown'}<br>
+    <strong>Unofficial:</strong> ${properties.informal || 'no'}
+</div>`;
 
     // Create and show the pop-up
     new mapboxgl.Popup()
@@ -345,18 +395,22 @@ map.on('click', 'trees-layer', function (e) {
     const properties = e.features[0].properties;
     console.log('Feature properties:', properties); // Debugging line
 
+    let popupHTML;
     // Construct the HTML for the popup
-    const popupHTML = `
-    <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
-    <strong>Botanical Name:</strong> ${properties["Botanical Name"]}<br>
-    <strong>Common Name:</strong> ${properties["Common Name"]}<br>
-    <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}<br>
-    <strong>DBH Info:</strong> ${properties["DBH Info"]}<br>
-    <strong>General Health:</strong> ${properties["General Health"]}<br>
-    <strong>Memorial Tree:</strong> ${properties["Memorial Tree"]}<br>
-    <strong>Latitude:</strong> ${coordinates[1]}<br>
-    <strong>Longitude:</strong> ${coordinates[0]}
-    `;
+    if (properties["Notes"] === "") {
+        popupHTML = `<div class="popup-content">
+        <strong>General Health:</strong> ${properties["General Health"]}<br>
+        <strong>Lat:</strong> ${coordinates[1].toFixed(6)}<br>
+        <strong>Lon:</strong> ${coordinates[0].toFixed(6)}
+        </div>`;
+    } else {
+        popupHTML = `<div class="popup-content">
+        <strong>General Health:</strong> ${properties["General Health"]}<br>
+        <strong>Notes:</strong> ${properties["Notes"]}<br>
+        <strong>Lat:</strong> ${coordinates[1].toFixed(6)}<br>
+        <strong>Lon:</strong> ${coordinates[0].toFixed(6)}
+        </div>`;
+    }
 
     // Ensure the popup appears over the correct location
     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -391,5 +445,6 @@ function resetMap() {
 
 map.on('click', (e) => {
     const coordinates = e.lngLat;
-    console.log(`Latitude: ${coordinates.lat}, Longitude: ${coordinates.lng}`);
+    console.log(`Lat: ${coordinates.lat}, Lon: ${coordinates.lng}`);
 });
+

@@ -1,3 +1,4 @@
+import math
 import fitz  # PyMuPDF
 import re
 import json
@@ -10,6 +11,7 @@ from scipy.optimize import linear_sum_assignment
 import pandas as pd
 import re
 import glob
+from pdf_overlay import create_zone_overlay
 
 # Supported zones and page numbers in tree inventory pdf
 zones = {
@@ -22,6 +24,36 @@ zones = {
         'map_page': 18,
         'table_start': 19,
         'table_end': 31,
+    }, 
+    'c': {
+        'map_page': 33,
+        'table_start': 34,
+        'table_end': 43
+    }, 
+    'd': {
+        'map_page': 45,
+        'table_start': 46,
+        'table_end': 54
+    }, 
+    'e': {
+        'map_page': 56,
+        'table_start': 57,
+        'table_end': 60
+    }, 
+    'f': {
+        'map_page': 62,
+        'table_start': 63,
+        'table_end': 72
+    }, 
+    'g': {
+        'map_page': 74,
+        'table_start': 75,
+        'table_end': 85
+    }, 
+    'h': {
+        'map_page': 87,
+        'table_start': 88,
+        'table_end': 93
     }
 }
 
@@ -49,7 +81,7 @@ def create_geojson_feature(lat, lon, text_label, properties):
     )
     return feature
 
-def pdf_to_geo(bounds, x, y):
+def pdf_to_geo(bounds, x, y, zone_e=False):
     """
     Convert PDF coordinates to geographic coordinates (latitude and longitude).
     
@@ -71,13 +103,43 @@ def pdf_to_geo(bounds, x, y):
     x_norm = (x - x_min) / (x_max - x_min)
     y_norm = (y - y_min) / (y_max - y_min)
     
-    # Convert normalized coordinates to latitude and longitude
-    lat = lat_min + y_norm * (lat_max - lat_min)
-    lon = lon_min + x_norm * (lon_max - lon_min)
+    if zone_e:
+        # Calculate the center of the bounding box
+        center_lat = (lat_min + lat_max) / 2
+        center_lon = (lon_min + lon_max) / 2
+
+        big_angle_radians = math.pi - 0.12
+
+        # Translate coordinates to the center of the bounding box
+        x = lat_min + x_norm * (lat_max - lat_min)
+        y = lon_min + y_norm * (lon_max - lon_min)
+        
+        y = (lon_max - lon_min) - (y - lon_min) + lon_min
+
+        # Translate to origin (center of bounding box)
+        x_prime = x - center_lat
+        y_prime = y - center_lon
+
+        # Apply rotation
+        x_double_prime = x_prime * math.cos(big_angle_radians) - y_prime * math.sin(big_angle_radians)
+        y_double_prime = x_prime * math.sin(big_angle_radians) + y_prime * math.cos(big_angle_radians)
+
+        # Translate back
+        lat = x_double_prime + center_lat
+        lon = y_double_prime + center_lon
+        
+        '''
+        lat = lat_max - (x_pprime * (lat_max - lat_min))
+        lon = lon_min + (y_pprime * (lon_max - lon_min))
+        '''
+    else:
+        # Convert normalized coordinates to latitude and longitude
+        lat = lat_min + y_norm * (lat_max - lat_min)
+        lon = lon_min + x_norm * (lon_max - lon_min)
     
     return lat, lon
 
-def save_geojson(assignments, bounds, table_data, output_file_path):
+def save_geojson(assignments, bounds, table_data, output_file_path, zone_e=False):
     """
     Save assignments and table data as GeoJSON features to a file.
 
@@ -90,7 +152,7 @@ def save_geojson(assignments, bounds, table_data, output_file_path):
     features = []
     for assignment in assignments:
         pdf_y, pdf_x = assignment['coords']
-        lat, lon = pdf_to_geo(bounds, pdf_x, pdf_y)
+        lat, lon = pdf_to_geo(bounds, pdf_x, pdf_y, zone_e)
         numerical_id = assignment['n']
         
         # Find the corresponding table data entry
@@ -111,7 +173,7 @@ def calculate_center(rect):
     center_y = (y0 + y1) / 2
     return center_x, center_y
 
-def extract_dots(graphics, debug=False):
+def extract_dots(graphics, letter, debug=False):
     dot_coords = []
 
     # Define the red color in RGB
@@ -127,15 +189,29 @@ def extract_dots(graphics, debug=False):
             center = calculate_center(item["rect"])
             dot_coords.append(center)
     
+    # switch x and y remember
+    min_x = min(dot_coords, key=lambda coord: coord[1])[1]
+    max_x = max(dot_coords, key=lambda coord: coord[1])[1]
+    min_y = min(dot_coords, key=lambda coord: coord[0])[0]
+    max_y = max(dot_coords, key=lambda coord: coord[0])[0]
+    
+    info_path = f"zone_info/{letter}.json"
+    if not os.path.exists(info_path):
+        with open(info_path, 'w') as file:
+            info = {
+                "bounds": {
+                    "x": [min_x, max_x],
+                    "y": [min_y, max_y],
+                    "lat": [43.19774, 43.20187],
+                    "lon": [-71.58407, -71.57691]
+                },
+                "extra_labels": []
+            }
+            json.dump(info, file)
+    
     if debug:
         print('--- extract_dots debug ---')
         print(f'Number of dots: {len(dot_coords)}')
-        # switch x and y coords remember
-        min_x = min(dot_coords, key=lambda coord: coord[1])[1]
-        max_x = max(dot_coords, key=lambda coord: coord[1])[1]
-        min_y = min(dot_coords, key=lambda coord: coord[0])[0]
-        max_y = max(dot_coords, key=lambda coord: coord[0])[0]
-        
         print(f'Bounds:\n\tx: {min_x}, {max_x}\n\ty: {min_y}, {max_y}\n')
         
     return dot_coords
@@ -264,18 +340,23 @@ def extract_table_data(start_page, end_page, letter):
     with open(f"zone_info/{letter}.txt", "w") as file:
         file.write(text)
 
-def process_table_data(letter, debug=False):
-    with open(f"zone_info/{letter}.txt", "r") as file:
+def process_table_data(letter, debug=False, edited=True):
+    if edited:
+        dir = "zone_info/tables_edited"
+    else:
+        dir = "zone_info"
+        
+    with open(f"{dir}/{letter}.txt", "r") as file:
         text = file.read()
         
     # Define a regex pattern to match table rows
     pattern = re.compile(r"""
     ([A-Z]-\d{3})\n            # Matches the Tree ID: A letter followed by a dash and three digits, followed by a newline
-    (\w+\s+\w.*?)\n             # Matches the Botanical Name: Two words separated by a space, maybe with a period
+    (\w+\s+\w.*?)\n            # Matches the Botanical Name: Two words separated by a space, maybe with a period
     (.*?)\n                    # Matches the Common Name: Any characters, captured non-greedily, followed by a newline
     (.*?)\n                    # Matches the DBH: anything because formatting is wack
     ([A-Z]+)\n                 # Matches the General Health: One or more uppercase letters, followed by a newline
-    (.*?)\n?                   # Matches the Memorial Tree: Any characters, captured non-greedily, followed by a newline
+    (.*?(?=\n[A-Z]-\d{3}))?    # Matches the Notes: Any characters, captured non-greedily, followed by a newline
     """, re.VERBOSE)
     
     matches = pattern.findall(text)
@@ -299,7 +380,7 @@ def process_table_data(letter, debug=False):
             "DBH (inches)": dbh,
             "DBH Info": dbh_str,
             "General Health": match[4].strip(),
-            "Memorial Tree": match[5].strip()
+            "Notes": match[5].strip()
         })
 
     if debug:
@@ -310,7 +391,8 @@ def process_table_data(letter, debug=False):
         
     return table_data
 
-def process_zone(letter, debug=[], write=None, extract_table=False):
+def process_zone(letter, debug=[], write=None, extract_table=False, pdf=False):
+    print(f"--- Processing zone {letter} with debug={debug}, write={write}, extract_table={extract_table}, pdf={pdf} ---\n")
     if letter not in zones.keys():
         ValueError(f"Zone {letter} not supported (supported: {zones.keys()})")
         
@@ -325,7 +407,7 @@ def process_zone(letter, debug=[], write=None, extract_table=False):
     vector_graphics = page.get_drawings()
 
     # Filter text blocks to get the labels and their positions
-    dots = extract_dots(vector_graphics, 'dots' in debug)
+    dots = extract_dots(vector_graphics, letter, 'dots' in debug)
     
     # Extract text blocks
     text_blocks = page.get_text("dict")
@@ -356,11 +438,12 @@ def process_zone(letter, debug=[], write=None, extract_table=False):
             bounds = data["bounds"]
             
         geo_path = f'tree_extractions/zone_{letter}.geojson'
-        save_geojson(assignments, bounds, table_data, geo_path)
-          
-        combine_geojson_files()  
+        save_geojson(assignments, bounds, table_data, geo_path, zone_e=(letter == 'e'))
         
-    elif write is None:
+    elif write == False:
+        pass
+    
+    else:
         answer = input('Write assignments to file? (y/n)')
         if answer in ['y', 'yes', 'Y', 'YES']:
             path = f'tree_extractions/zone_{letter}.json'
@@ -375,11 +458,10 @@ def process_zone(letter, debug=[], write=None, extract_table=False):
                 bounds = data["bounds"]
                 
             geo_path = f'tree_extractions/zone_{letter}.geojson'
-            save_geojson(assignments, bounds, table_data, geo_path)
-        
-        answer = input('Combine geojson files? (y/n)')
-        if answer in ['y', 'yes', 'Y', 'YES']:
-            combine_geojson_files()
+            save_geojson(assignments, bounds, table_data, geo_path, zone_e=(letter == 'e'))
+    
+    if pdf:
+        create_zone_overlay(letter, zone['map_page'])
             
 def combine_geojson_files():
     combined_features = []
@@ -403,8 +485,16 @@ def combine_geojson_files():
     with open("tree_extractions/all_trees.geojson", 'w') as output_file:
         json.dump(combined_geojson, output_file, indent=2)
 
-def process_all():
-    for letter in zones.keys():
-        process_zone(letter, write=True)
+def process_all(letters=None, **kwargs):
+    if letters == None:
+        letters = zones.keys()
         
-process_all()
+    for letter in letters:
+        process_zone(letter, **kwargs)
+    
+    answer = input('Combine geojson files? (y/n)')
+    if answer in ['y', 'yes', 'Y', 'YES']:
+        combine_geojson_files()
+        
+letters = ['e']
+process_all(write=True)
