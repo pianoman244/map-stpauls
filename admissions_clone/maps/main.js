@@ -1,10 +1,27 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvbjlzc2Z2bXkwIn0.mOh5fw5vP2zvcN2Go09w8A';
 
+let defaultZoom;
+function updateDefaultZoom() {
+    if (window.innerWidth > 1024) {
+        defaultZoom = 14;
+    } else if (window.innerWidth > 768) {
+        defaultZoom = 13.8;
+    } else if (window.innerWidth > 600) {
+        defaultZoom = 13.5;
+    } else {
+        defaultZoom = 13.1;
+    }
+}
+updateDefaultZoom()
+window.addEventListener('resize', updateDefaultZoom);
+
+const defaultCenter = [-71.585, 43.19]
+
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/satellite-streets-v12',
-    center: [-71.58, 43.190409], // default center [lng, lat]
-    zoom: 13.78, // default zoom
+    center: defaultCenter, // default center [lng, lat]
+    zoom: defaultZoom, // default zoom
     pitch: 0,
     bearing: 0
 });
@@ -23,21 +40,29 @@ if (window.location.protocol === 'file:') {
 // Function to update the layer visibility based on zoom level
 function updateLayerVisibility() {
     var zoom = map.getZoom();
-    if (15 > zoom && zoom >= 14) {
+    if (15 > zoom && zoom >= 13.5) {
         map.setPaintProperty('trees-layer', 'circle-opacity', 1, {
             'duration': 500
         });
-    } else if (zoom < 14) {
+        map.setPaintProperty('trees-layer', 'circle-stroke-width', 1, {
+            'duration': 500
+        });
+    } else if (zoom < 13.5) {
         map.setPaintProperty('trees-layer', 'circle-opacity', 0, {
+            'duration': 500
+        });
+        map.setPaintProperty('trees-layer', 'circle-stroke-width', 0, {
             'duration': 500
         });
     }
 }
 
+/*
 // Update layer visibility on zoom events
 map.on('zoom', function () {
     updateLayerVisibility();
 });
+*/
 
 fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
     .then(response => response.json())
@@ -99,12 +124,22 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 'H': 'rgba(159, 160, 134, 1)'  // Tan
             };
 
+            // Function to find the first label layer
+            function findFirstLabelLayer(layers) {
+                for (let i = 0; i < layers.length; i++) {
+                    if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+                        return layers[i].id;
+                    }
+                }
+                return null;
+            }
+
+            const minzoom_trees = 13.5;
             // Add a circle layer
             map.addLayer({
                 'id': 'trees-layer',
                 'type': 'circle',
                 'source': 'points',
-                'slot': 'middle',
                 'paint': {
                     // Circle radius changes with zoom level
                     /*
@@ -140,9 +175,8 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                     'circle-pitch-alignment': 'map', // Align circles with the map pitch
                     'circle-stroke-width': 1,
                     'circle-stroke-color': '#000000'
-                },
-                'minzoom': 14
-            });
+                }
+            }, findFirstLabelLayer(map.getStyle().layers));
 
             // Create a legend
             const legend = document.getElementById('legend');
@@ -206,6 +240,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
             // Add mousemove event listener to the trees layer
             map.on('mousemove', 'trees-layer', (e) => {
                 if (!isInfoBoxFixed) {
+                    infoBox.className = 'selected';
                     const properties = e.features[0].properties;
                     infoBox.innerHTML = `
                         <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
@@ -226,6 +261,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                     <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}
                 `;
                 infoBox.innerHTML = fixedInfoContent;
+                infoBox.className = 'selected';
                 isInfoBoxFixed = true;
             });
 
@@ -233,6 +269,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
             map.on('mouseleave', 'trees-layer', () => {
                 map.getCanvas().style.cursor = '';
                 if (!isInfoBoxFixed) {
+                    infoBox.className = 'default';
                     infoBox.innerHTML = 'Hover over a tree to see its details.';
                 }
             });
@@ -246,10 +283,10 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
 
                 if (features.length === 0) {
                     isInfoBoxFixed = false;
+                    infoBox.className = 'default';
                     infoBox.innerHTML = 'Hover over a tree to see its details.';
                 }
             });
-
 
             /*
                         // Extract start and end points from the trails
@@ -435,8 +472,8 @@ map.on('mouseleave', 'trees-layer', function () {
 // Function to reset map to default location and zoom
 function resetMap() {
     map.flyTo({
-        center: [-71.58, 43.190409], // default center [lng, lat]
-        zoom: 13.78, // default zoom
+        center: defaultCenter, // default center [lng, lat]
+        zoom: defaultZoom, // default zoom
         pitch: 0,
         bearing: 0,
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
