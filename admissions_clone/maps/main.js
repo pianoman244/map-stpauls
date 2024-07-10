@@ -1,28 +1,32 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvbjlzc2Z2bXkwIn0.mOh5fw5vP2zvcN2Go09w8A';
 
 let defaultZoom;
+const defaultPitch = 45;
+let defaultCenter;
 function updateDefaultZoom() {
     if (window.innerWidth > 1024) {
-        defaultZoom = 14;
+        defaultZoom = 14.3;
+        defaultCenter = [-71.58, 43.19];
     } else if (window.innerWidth > 768) {
-        defaultZoom = 13.8;
+        defaultZoom = 13.85;
+        defaultCenter = [-71.58, 43.19];
     } else if (window.innerWidth > 600) {
-        defaultZoom = 13.5;
+        defaultZoom = 15;
+        defaultCenter = [-71.58, 43.19];
     } else {
-        defaultZoom = 13.1;
+        defaultZoom = 14.5;
+        defaultCenter = [-71.58, 43.19];
     }
 }
 updateDefaultZoom()
 window.addEventListener('resize', updateDefaultZoom);
-
-const defaultCenter = [-71.585, 43.19]
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/satellite-streets-v12',
     center: defaultCenter, // default center [lng, lat]
     zoom: defaultZoom, // default zoom
-    pitch: 0,
+    pitch: defaultPitch,
     bearing: 0
 });
 
@@ -228,6 +232,68 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 ]
             });
 
+            // Add the GeoJSON source
+            map.addSource('buildings', {
+                'type': 'geojson',
+                'data': path + 'admissions_clone/maps/data/buildings_augmented.geojson' // Path to your uploaded GeoJSON file
+            });
+
+            // Add the 3D buildings layer
+            map.addLayer({
+                'id': '3d-buildings',
+                'source': 'buildings',
+                'type': 'fill-extrusion',
+                'paint': {
+                    'fill-extrusion-color': '#ddd', // Color of the buildings
+                    'fill-extrusion-height': [
+                        'interpolate', ['linear'], ['zoom'],
+                        13.8, 0,
+                        13.85, ['case',
+                            ['>', ['get', 'construction_date'], 2024], 0,
+                            ['get', 'height'] // assuming 'height' is a property in your GeoJSON
+                        ]
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate', ['linear'], ['zoom'],
+                        13.8, 0,
+                        13.85, ['coalesce', ['get', 'min_height'], 0] // Assuming 'min_height' is a property in your GeoJSON
+                    ],
+                    'fill-extrusion-opacity': 0.8,
+                    'fill-extrusion-height-transition': {
+                        'duration': 100,
+                        'delay': 0
+                    }
+                }
+            });
+
+            const slider = document.getElementById('yearSlider');
+            const yearLabel = document.getElementById('yearLabel');
+
+            slider.addEventListener('input', (e) => {
+                const year = parseInt(e.target.value);
+                yearLabel.textContent = `Year: ${year}`;
+
+                map.setPaintProperty('3d-buildings', 'fill-extrusion-height', [
+                    'interpolate', ['linear'], ['zoom'],
+                    15, 0,
+                    15.05, ['case',
+                        ['>', ['get', 'construction_date'], year], 0,
+                        ['get', 'height']
+                    ]
+                ]);
+
+                map.setPaintProperty('3d-buildings', 'fill-extrusion-color', ['case',
+                    ['>', ['get', 'construction_date'], year], '#999',
+                    '#ddd'
+                ]);
+            });
+
+            //
+            //
+            // --------------- INFO BOXES ----------------
+            //
+            //
+
             // Initialize the info box element
             const infoBox = document.getElementById('info-box');
 
@@ -240,7 +306,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
             // Add mousemove event listener to the trees layer
             map.on('mousemove', 'trees-layer', (e) => {
                 if (!isInfoBoxFixed) {
-                    infoBox.className = 'selected';
+                    infoBox.className = 'selected map-display-window';
                     const properties = e.features[0].properties;
                     infoBox.innerHTML = `
                         <strong>Tree ID:</strong> ${properties["Tree ID"]}<br>
@@ -261,7 +327,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                     <strong>DBH (inches):</strong> ${properties["DBH (inches)"]}
                 `;
                 infoBox.innerHTML = fixedInfoContent;
-                infoBox.className = 'selected';
+                infoBox.className = 'selected map-display-window';
                 isInfoBoxFixed = true;
             });
 
@@ -269,7 +335,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
             map.on('mouseleave', 'trees-layer', () => {
                 map.getCanvas().style.cursor = '';
                 if (!isInfoBoxFixed) {
-                    infoBox.className = 'default';
+                    infoBox.className = 'default map-display-window';
                     infoBox.innerHTML = 'Select a tree!  &#x1F333;  &#x1F535;  &#x1F7E2;  &#x1F7E1;';
                 }
             });
@@ -283,67 +349,10 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
 
                 if (features.length === 0) {
                     isInfoBoxFixed = false;
-                    infoBox.className = 'default';
+                    infoBox.className = 'default map-display-window';
                     infoBox.innerHTML = 'Select a tree!  &#x1F333;  &#x1F535;  &#x1F7E2;  &#x1F7E1;';
                 }
             });
-
-            /*
-                        // Extract start and end points from the trails
-                        const markerFeatures = [];
-                        data.features.forEach(feature => {
-                            const coordinates = feature.geometry.coordinates;
-                            if (coordinates.length > 0) {
-                                const start = coordinates[0];
-                                const end = coordinates[coordinates.length - 1];
-                                markerFeatures.push({
-                                    type: 'Feature',
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: start
-                                    },
-                                    properties: {
-                                        type: 'start'
-                                    }
-                                });
-                                markerFeatures.push({
-                                    type: 'Feature',
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: end
-                                    },
-                                    properties: {
-                                        type: 'end'
-                                    }
-                                });
-                            }
-                        });
-            
-                        // Add the markers as a source
-                        map.addSource('trail-markers', {
-                            type: 'geojson',
-                            data: {
-                                type: 'FeatureCollection',
-                                features: markerFeatures
-                            }
-                        });
-            
-                        // Add the markers as a layer
-                        map.addLayer({
-                            'id': 'trail-markers-layer',
-                            'type': 'circle',
-                            'source': 'trail-markers',
-                            'paint': {
-                                'circle-radius': 3,
-                                'circle-color': [
-                                    'match',
-                                    ['get', 'type'],
-                                    'start', '#f00', // Red for start points
-                                    'end', '#00f',   // Blue for end points
-                                ]
-                            }
-                        });
-            */
         });
     })
     .catch(error => {
@@ -474,7 +483,7 @@ function resetMap() {
     map.flyTo({
         center: defaultCenter, // default center [lng, lat]
         zoom: defaultZoom, // default zoom
-        pitch: 0,
+        pitch: defaultPitch,
         bearing: 0,
         essential: true // this animation is considered essential with respect to prefers-reduced-motion
     });

@@ -46,19 +46,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-#legend {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ffffff;
+.map-display-window {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Editor', 'Georgia', sans-serif;
     font-size: 2vh;
     color: #333333;
-    max-width: 300px;
     opacity: 0.9;
+    background: #ffffff;
+}
+
+#legend {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 300px;
+    
 }
 
 .legend-item {
@@ -239,17 +243,6 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #ffffff;
-    /* White background for modern look */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Editor', 'Georgia', sans-serif;
-    /* Modern font */
-    font-size: 2vh;
-    color: #333333;
-    opacity: 0.9;
-    /* Darker text color */
 }
 
 #info-box.default {
@@ -265,16 +258,44 @@
 }
 
 .popup-content {
-    background: #ffffff;
-    /* White background for modern look */
     padding: 5px;
-    /* border-radius: 8px; */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    font-size: 2vh;
     font-family: 'Editor', 'Georgia', sans-serif;
-    /* Modern font */
     font-size: 2vh;
     color: #333333;
-    max-width: 160px;
     opacity: 0.9;
-    /* Darker text color */
+    background: #ffffff;
+}
+
+#slider {
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    padding: 10px;
+    width: 400px;
+    bottom: 40px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    /* justify-content: center; */
+}
+
+#yearSlider {
+    width: 40vh;
+}
+
+#yearLabel {
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    #slider {
+        bottom: 180px;
+        width: 230px;
+    }
+
+    #yearSlider {
+        width: 18vh;
+    }
 }
