@@ -78,6 +78,94 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                 data: data // Use the fetched GeoJSON data
             });
 
+            map.addSource('zones', {
+                'type': 'geojson',
+                'data': path + 'admissions_clone/maps/data/zones.geojson'
+            });
+
+            map.addLayer({
+                'id': 'polygons-layer',
+                'type': 'fill',
+                'source': 'zones',
+                'paint': {
+                    'fill-color': [
+                        'coalesce',
+                        ['get', 'color'],
+                        'blue'
+                    ],
+                    'fill-opacity': 0.4,
+                    'fill-outline-color': 'rgba(0, 0, 0, 0)' // No outline
+                }
+            }, findFirstLabelLayer(map.getStyle().layers));
+
+            // Add a new layer for the highlighted polygon
+            map.addLayer({
+                'id': 'highlighted-polygon',
+                'type': 'fill',
+                'source': 'zones',
+                'paint': {
+                    'fill-color': [
+                        'coalesce',
+                        ['get', 'color'],
+                        'blue'
+                    ],
+                    'fill-opacity': 0.6
+                },
+                'filter': ['==', 'zone', ''] // Initially, no polygon is highlighted
+            }, findFirstLabelLayer(map.getStyle().layers));
+
+            // Add a new layer for the highlighted polygon outline
+            map.addLayer({
+                'id': 'highlighted-outline',
+                'type': 'line',
+                'source': 'zones',
+                'paint': {
+                    'line-color': '#000000', // Outline color
+                    'line-width': 5, // Outline width
+                    'line-dasharray': [4, 2] // Dash pattern: 10px dash, 5px gap
+                },
+                'filter': ['==', 'zone', ''] // Initially, no polygon is highlighted
+            }, findFirstLabelLayer(map.getStyle().layers));
+
+            // Click event listener
+            map.on('click', 'polygons-layer', function (e) {
+                var clickedFeatureId = e.features[0].properties.zone;
+
+                // Set filter to highlight the clicked polygon
+                map.setFilter('highlighted-polygon', ['==', 'zone', clickedFeatureId]);
+                map.setFilter('highlighted-outline', ['==', 'zone', clickedFeatureId]);
+
+                // Optionally, reset the filter if you want to unhighlight the polygon on second click
+                if (map.getFilter('highlighted-polygon')[1] === clickedFeatureId) {
+                    map.setFilter('highlighted-polygon', ['==', 'zone', '']);
+                    map.setFilter('highlighted-outline', ['==', 'zone', '']);
+                }
+            });
+
+            // Click event listener for the map to unhighlight polygons when clicking outside
+            map.on('click', function (e) {
+                // Get features under the click event point
+                var features = map.queryRenderedFeatures(e.point, {
+                    layers: ['polygons-layer']
+                });
+
+                // If no features are found, unhighlight all polygons
+                if (features.length === 0) {
+                    map.setFilter('highlighted-polygon', ['==', 'zone', '']);
+                    map.setFilter('highlighted-outline', ['==', 'zone', '']);
+                }
+            });
+
+            // Change the cursor to a pointer when the mouse is over the polygons-layer
+            map.on('mouseenter', 'polygons-layer', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to the default when it leaves
+            map.on('mouseleave', 'polygons-layer', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
             map.addLayer({
                 'id': 'trail-layer',
                 'type': 'line',
@@ -162,7 +250,7 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                         22, ['*', 20, ['^', ['to-number', ['get', 'DBH (inches)'], 8], 0.3]]
                     ],
                     // Define the circle color based on the first character of Tree ID
-                    'circle-color': [
+                    /*'circle-color': [
                         'match',
                         ['slice', ['get', 'Tree ID'], 0, 1],
                         'A', colorMapping['A'],
@@ -173,8 +261,8 @@ fetch(path + 'admissions_clone/maps/data/trails_demo.geojson')
                         'F', colorMapping['F'],
                         'G', colorMapping['G'],
                         'H', colorMapping['H'],
-                        /* default */ '#FFFFFF' // Default to white if none match
-                    ],
+                    ],*/
+                    'circle-color': '#7BB661',
                     'circle-pitch-scale': 'map', // Scale circles with the map
                     'circle-pitch-alignment': 'map', // Align circles with the map pitch
                     'circle-stroke-width': 1,
