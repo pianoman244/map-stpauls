@@ -5,10 +5,12 @@ from PyPDF2.generic import RectangleObject
 from io import BytesIO
 import json
 
-def create_overlay(assignments, output_overlay_path):
+def create_dots_overlay(assignments, output_overlay_path):
     packet = BytesIO()
-    can = canvas.Canvas(packet, pagesize=(17*72, 11*72))
+    can = canvas.Canvas(packet, pagesize=(*72, 11*72))
     
+    # create one text label for every dot
+    # assignments have 'coords' and 'n' for label text
     for assignment in assignments:
         label_coords = assignment['coords']
         label_text = str(assignment['n'])
@@ -32,7 +34,7 @@ def create_overlay(assignments, output_overlay_path):
     with open(output_overlay_path, 'wb') as f:
         f.write(packet.getbuffer())
 
-def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path):
+def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path, rotation=0):
     original_pdf = PdfReader(original_pdf_path)
     overlay_pdf = PdfReader(overlay_pdf_path)
     writer = PdfWriter()
@@ -41,12 +43,13 @@ def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path):
     original_page = original_pdf.pages[page_num]
     overlay_page = overlay_pdf.pages[0]
     
+    # Correct for rotation in the original pdf
     # Credit to this forum for this code:
     # https://github.com/py-pdf/pypdf/issues/1280
     overlay_page.add_transformation(
     Transformation()
     .translate(-float(overlay_page.mediabox.width) / 2, -float(overlay_page.mediabox.height) / 2)
-    .rotate(270)
+    .rotate(rotation)
     .translate(float(overlay_page.mediabox.height) / 2, float(original_page.mediabox.bottom + overlay_page.mediabox.width / 2))
     )
 
@@ -61,14 +64,15 @@ def merge_pdfs(original_pdf_path, page_num, overlay_pdf_path, output_pdf_path):
     overlay_page.update({'/MediaBox': RectangleObject([0, new_y, new_width, new_y + new_heigth])})
     overlay_page.update({'/TrimBox': RectangleObject([0, new_y, new_width, new_y + new_heigth])})
     
-    
-    
     original_page.merge_page(overlay_page)
     writer.add_page(original_page)
 
     with open(output_pdf_path, 'wb') as f:
         writer.write(f)
 
+'''
+Creates a PDF overlay of the assignments for a given zone on top of the tree inventory page
+'''
 def create_zone_overlay(letter, page_num):
     page_num_zero_indexed = page_num - 1
     
@@ -82,7 +86,7 @@ def create_zone_overlay(letter, page_num):
     output_pdf_path = f'pdf_overlays/zone_{letter}.pdf'
 
     # Create the overlay PDF
-    create_overlay(assignments, overlay_pdf_path)
+    create_dots_overlay(assignments, overlay_pdf_path)
 
     # Merge the overlay with the original PDF
-    merge_pdfs(original_pdf_path, page_num_zero_indexed, overlay_pdf_path, output_pdf_path)
+    merge_pdfs(original_pdf_path, page_num_zero_indexed, overlay_pdf_path, output_pdf_path, rotation=270)
