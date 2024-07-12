@@ -12,6 +12,7 @@ import pandas as pd
 import re
 import glob
 from pdf_overlay import create_zone_overlay
+from pdf_utils import pdf_to_geo_old
 
 # Supported zones and page numbers in tree inventory pdf
 zones = {
@@ -81,64 +82,6 @@ def create_geojson_feature(lat, lon, text_label, properties):
     )
     return feature
 
-def pdf_to_geo(bounds, x, y, zone_e=False):
-    """
-    Convert PDF coordinates to geographic coordinates (latitude and longitude).
-    
-    Args:
-    - bounds (dict): A dictionary containing the bounds information.
-    - x (float): The x-coordinate in PDF.
-    - y (float): The y-coordinate in PDF.
-    
-    Returns:
-    - (lat, lon) (tuple): The corresponding latitude and longitude.
-    """
-    # Extract bounds
-    x_min, x_max = bounds['x']
-    y_min, y_max = bounds['y']
-    lat_min, lat_max = bounds['lat']
-    lon_min, lon_max = bounds['lon']
-    
-    # Normalize PDF coordinates to a [0, 1] range
-    x_norm = (x - x_min) / (x_max - x_min)
-    y_norm = (y - y_min) / (y_max - y_min)
-    
-    if zone_e:
-        # Calculate the center of the bounding box
-        center_lat = (lat_min + lat_max) / 2
-        center_lon = (lon_min + lon_max) / 2
-
-        big_angle_radians = math.pi - 0.12
-
-        # Translate coordinates to the center of the bounding box
-        x = lat_min + x_norm * (lat_max - lat_min)
-        y = lon_min + y_norm * (lon_max - lon_min)
-        
-        y = (lon_max - lon_min) - (y - lon_min) + lon_min
-
-        # Translate to origin (center of bounding box)
-        x_prime = x - center_lat
-        y_prime = y - center_lon
-
-        # Apply rotation
-        x_double_prime = x_prime * math.cos(big_angle_radians) - y_prime * math.sin(big_angle_radians)
-        y_double_prime = x_prime * math.sin(big_angle_radians) + y_prime * math.cos(big_angle_radians)
-
-        # Translate back
-        lat = x_double_prime + center_lat
-        lon = y_double_prime + center_lon
-        
-        '''
-        lat = lat_max - (x_pprime * (lat_max - lat_min))
-        lon = lon_min + (y_pprime * (lon_max - lon_min))
-        '''
-    else:
-        # Convert normalized coordinates to latitude and longitude
-        lat = lat_min + y_norm * (lat_max - lat_min)
-        lon = lon_min + x_norm * (lon_max - lon_min)
-    
-    return lat, lon
-
 def save_geojson(assignments, bounds, table_data, output_file_path, zone_e=False):
     """
     Save assignments and table data as GeoJSON features to a file.
@@ -152,7 +95,7 @@ def save_geojson(assignments, bounds, table_data, output_file_path, zone_e=False
     features = []
     for assignment in assignments:
         pdf_y, pdf_x = assignment['coords']
-        lat, lon = pdf_to_geo(bounds, pdf_x, pdf_y, zone_e)
+        lat, lon = pdf_to_geo_old(bounds, pdf_x, pdf_y, zone_e)
         numerical_id = assignment['n']
         
         # Find the corresponding table data entry
@@ -458,7 +401,10 @@ def process_zone(letter, debug=[], write=None, extract_table=False, pdf=False):
                 bounds = data["bounds"]
                 
             geo_path = f'tree_extractions/zone_{letter}.geojson'
-            save_geojson(assignments, bounds, table_data, geo_path, zone_e=(letter == 'e'))
+            rotation = None
+            if letter == 'e':
+                rotation = math.pi - 0.12
+            save_geojson(assignments, bounds, table_data, geo_path, rotation=rotation)
     
     if pdf:
         create_zone_overlay(letter, zone['map_page'])
