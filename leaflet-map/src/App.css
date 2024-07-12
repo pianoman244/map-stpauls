@@ -1,3 +1,4 @@
+/* Existing styles */
 .App {
   text-align: center;
   height: 100vh;
@@ -16,20 +17,71 @@
   color: white;
 }
 
-.info-window {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: white;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure it stays on top */
-}
-
 .map-container {
   height: 80vh;
   width: 100%;
   position: relative;
+}
+
+/* New and updated styles */
+.leaflet-top.leaflet-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.layer-control {
+  order: -1;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+}
+
+.layer-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.info-box {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  text-align: left;
+}
+
+.feature-edit-box {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+}
+
+.feature-edit-box h3,
+.info-box h3 {
+  margin-top: 0;
+}
+
+.feature-edit-box form div {
+  margin-bottom: 10px;
+}
+
+.feature-edit-box label {
+  display: inline-block;
+  width: 50px;
+}
+
+.feature-edit-box input {
+  width: calc(100% - 60px);
+}
+
+.info-box ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.info-box p {
+  margin: 10px 0;
 }

@@ -8,7 +8,7 @@ const InfoBox = () => {
   useEffect(() => {
     const InfoControl = L.Control.extend({
       onAdd: function() {
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control info-box');
         container.style.backgroundColor = 'white';
         container.style.padding = '10px';
         container.style.margin = '10px';
@@ -16,27 +16,31 @@ const InfoBox = () => {
         container.style.maxHeight = '400px';
         container.style.overflowY = 'auto';
         container.style.overflowWrap = 'break-word';
+        container.innerHTML = `
+          <h3>Feature Info</h3>
+          <p>Click on a feature to<br>see its information.</p>
+        `;
         
         let currentFeatureInfo = null;
 
         const renderInfo = (info) => {
           currentFeatureInfo = info;
           container.innerHTML = `
-            <h3>Feature Info</h3>
-            ${info ? `
-              ${info.featureData.properties ? `
-                <p><strong>Properties:</strong></p>
-                <ul>
-                  ${Object.entries(info.featureData.properties).map(([key, value]) => 
-                    `<li>${key}: ${JSON.stringify(value)}</li>`
-                  ).join('')}
-                </ul>
-              ` : ''}
-              ${info.featureData.geometry ? `
-                <p><strong>Geometry Type:</strong> ${info.featureData.geometry.type}</p>
-              ` : ''}
-            ` : 'No feature selected'}
-          `;
+              <h3>Feature Info</h3>
+              ${info ? `
+                ${info.featureData.properties ? `
+                  <p><strong>Properties:</strong></p>
+                  <ul>
+                    ${Object.entries(info.featureData.properties).map(([key, value]) => 
+                      `<li>${key}: ${JSON.stringify(value)}</li>`
+                    ).join('')}
+                  </ul>
+                ` : ''}
+                ${info.featureData.geometry ? `
+                  <p><strong>Geometry Type:</strong> ${info.featureData.geometry.type}</p>
+                ` : ''}
+              ` : 'No feature selected'}
+            `;
         };
 
         const handleFeatureSelect = (e) => {

@@ -7,12 +7,13 @@ const FeatureEditBox = () => {
 
   useEffect(() => {
     const EditControl = L.Control.extend({
-      onAdd: function() {
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+      onAdd: function () {
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control feature-edit-box');
         container.style.backgroundColor = 'white';
         container.style.padding = '10px';
         container.style.margin = '10px';
         container.style.maxWidth = '300px';
+        container.style.display = 'none'; // Initially hide the container
 
         let selectedFeature = null;
 
@@ -23,23 +24,23 @@ const FeatureEditBox = () => {
           }
           container.style.display = 'block';
           container.innerHTML = `
-            <h3>Edit Feature</h3>
-            <form>
-              <div>
-                <label for="name">Name: </label>
-                <input id="name" type="text" value="${selectedFeature.feature.properties.name || ''}">
-              </div>
-              <div>
-                <label for="zone">Zone: </label>
-                <input id="zone" type="text" value="${selectedFeature.feature.properties.zone || ''}">
-              </div>
-              <div>
-                <label for="color">Color: </label>
-                <input id="color" type="text" value="${selectedFeature.feature.properties.color || ''}">
-              </div>
-              <button type="submit">Update</button>
-            </form>
-          `;
+              <h3>Edit Feature</h3>
+              <form>
+                <div>
+                  <label for="name">Name: </label>
+                  <input id="name" type="text" value="${selectedFeature.feature.properties.name || ''}">
+                </div>
+                <div>
+                  <label for="zone">Zone: </label>
+                  <input id="zone" type="text" value="${selectedFeature.feature.properties.zone || ''}">
+                </div>
+                <div>
+                  <label for="color">Color: </label>
+                  <input id="color" type="text" value="${selectedFeature.feature.properties.color || ''}">
+                </div>
+                <button type="submit">Update</button>
+              </form>
+            `;
 
           const form = container.querySelector('form');
           form.addEventListener('submit', handleSubmit);
@@ -54,11 +55,11 @@ const FeatureEditBox = () => {
             selectedFeature.feature.properties.name = name;
             selectedFeature.feature.properties.zone = zone;
             selectedFeature.feature.properties.color = color;
-            
+
             if (CSS.supports('color', color)) {
               selectedFeature.setStyle({ color: color });
             }
-            
+
             const updateEvent = new CustomEvent('featureUpdated', { detail: { layer: selectedFeature } });
             window.dispatchEvent(updateEvent);
           }
