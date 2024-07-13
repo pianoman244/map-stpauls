@@ -9,16 +9,9 @@ const InfoBox = () => {
     const InfoControl = L.Control.extend({
       onAdd: function() {
         const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control info-box');
-        container.style.backgroundColor = 'white';
-        container.style.padding = '10px';
-        container.style.margin = '10px';
-        container.style.maxWidth = '300px';
-        container.style.maxHeight = '400px';
-        container.style.overflowY = 'auto';
-        container.style.overflowWrap = 'break-word';
         container.innerHTML = `
           <h3>Feature Info</h3>
-          <p>Click on a feature to<br>see its information.</p>
+          <p>Click on a feature in editing mode to see its information.</p>
         `;
         
         let currentFeatureInfo = null;

@@ -4,36 +4,24 @@ import L from 'leaflet';
 import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 
-const Geoman = ({ layers }) => {
+const Geoman = ({ layers, selectedEditLayer }) => {
     const map = useMap();
-    const highlightedFeatureRef = useRef(null);
     const layerGroupsRef = useRef({});
+    const highlightedFeatureRef = useRef(null);
 
-    // Helper Functions
-
-    /**
-     * Checks if a given color string is a valid CSS color
-     * @param {string} color - The color string to validate
-     * @returns {boolean} - True if the color is valid, false otherwise
-     */
-    const isValidColor = (color) => {
+    const isValidColor = useCallback((color) => {
         if (!color || typeof color !== 'string') return false;
         const s = new Option().style;
         s.color = color;
         return s.color !== '';
-    };
+    }, []);
 
-    /**
-     * Defines the style for each feature type
-     * @param {Object} feature - The GeoJSON feature
-     * @returns {Object} - The style object for the feature
-     */
-    const styleFunction = (feature) => {
+    const styleFunction = useCallback((feature) => {
         const baseStyle = {
-            weight: 2,
-            opacity: 1,
+            weight: 1.5,
+            opacity: 0.7,
             color: feature.properties.color || '#3388ff',
-            fillOpacity: 0.3
+            fillOpacity: 0.15
         };
 
         switch (feature.geometry.type) {
@@ -46,287 +34,226 @@ const Geoman = ({ layers }) => {
                 if (feature.properties.type === 'flowerBed') {
                     return {
                         ...baseStyle,
-                        color: feature.properties.color || '#FF69B4', // Pink color for flower beds
-                        weight: 4, // Slightly thicker line for visibility
-                        opacity: 0.8
+                        color: feature.properties.color || '#FF69B4',
+                        weight: 2,
+                        opacity: 0.6,
+                        dashArray: '5, 5'
                     };
                 }
-                // Existing LineString style (for trails)
                 let trailColor = baseStyle.color;
                 if (feature.properties.blaze && isValidColor(feature.properties.blaze)) {
                     trailColor = feature.properties.blaze;
                 }
                 return {
                     ...baseStyle,
-                    weight: 3,
-                    color: trailColor
+                    weight: 2,
+                    color: trailColor,
+                    opacity: 0.8
                 };
             case 'Point':
                 return {
                     ...baseStyle,
-                    radius: 8,
+                    radius: 4,
                     fillColor: feature.properties.color || '#3388ff',
                     color: "#000",
+                    weight: 1,
+                    opacity: 0.7,
+                    fillOpacity: 0.4
                 };
             default:
                 return baseStyle;
         }
-    };
+    }, [isValidColor]);
 
-    /**
-     * Creates a GeoJSON layer with appropriate styling and event listeners
-     * @param {Object} data - The GeoJSON data
-     * @returns {L.GeoJSON} - The created Leaflet GeoJSON layer
-     */
-    const createGeoJSONLayer = (data) => {
+    const highlightFeature = useCallback((e) => {
+        console.log("Highlighting feature:", e);
+        const layer = e.layer;
+        try {
+            if (layer.setStyle) {
+                layer.setStyle({
+                    weight: 3,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.5,
+                    opacity: 1
+                });
+            } else {
+                console.log("Can't set style for:", layer);
+            }
+            if (layer.bringToFront) {
+                layer.bringToFront();
+            }
+            highlightedFeatureRef.current = layer;
+        } catch (error) {
+            console.error('Error highlighting feature:', error);
+        }
+    }, []);
+
+    const unhighlightFeature = useCallback((e) => {
+        console.log("Unhighlighting feature:", e);
+        const layer = e.layer || highlightedFeatureRef.current;
+        if (!layer) return;
+        try {
+            if (layer.feature) {
+                layer.setStyle(styleFunction(layer.feature));
+            }
+            highlightedFeatureRef.current = null;
+        } catch (error) {
+            console.error('Error unhighlighting feature:', error);
+        }
+    }, [styleFunction]);
+
+    const handleFeatureClick = useCallback((e) => {
+        try {
+            const layer = e.layer;
+            console.log("Handling feature click:", layer);
+            if (highlightedFeatureRef.current && highlightedFeatureRef.current !== layer) {
+                unhighlightFeature({ target: highlightedFeatureRef.current });
+            }
+            highlightFeature(e);
+
+            const selectEvent = new CustomEvent('featureSelected', {
+                detail: {
+                    featureType: layer.feature.geometry.type,
+                    featureData: layer.feature,
+                    layer: layer,
+                    layerId: layer.feature.geometry.type // FIX THIS!!!
+                } 
+            });
+            console.log("dispatching event:", selectEvent);
+            window.dispatchEvent(selectEvent);
+        } catch (error) {
+            console.error('Error handling feature click:', error);
+        }
+    }, [highlightFeature, unhighlightFeature]);
+
+    const addLayerListeners = useCallback((layer) => {
+        layer.on({
+            click: handleFeatureClick
+        });
+    }, [handleFeatureClick]);
+
+    const removeLayerListeners = useCallback((layer) => {
+        layer.off({
+            click: handleFeatureClick
+        });
+    }, [handleFeatureClick]);
+
+    const createGeoJSONLayer = useCallback((data) => {
         return L.geoJSON(data, {
             style: styleFunction,
             pointToLayer: (feature, latlng) => {
                 return L.circleMarker(latlng, styleFunction(feature));
             },
-            onEachFeature: (feature, layer) => {
+        });
+    }, [styleFunction]);
+
+    const enableEditingForLayer = useCallback((layerId) => {
+        const layerGroup = layerGroupsRef.current[layerId];
+        if (layerGroup) {
+            layerGroup.eachLayer(layer => {
+                if (layer.pm) {
+                    layer.pm.enable({limitMarkersToCount: 20});
+                }
                 addLayerListeners(layer);
-            }
-        });
-    };
-
-    // Feature Interaction Functions
-
-    /**
-     * Highlights a feature on the map
-     * @param {L.Layer} layer - The Leaflet layer to highlight
-     */
-    const highlightFeature = (layer) => {
-        if (highlightedFeatureRef.current) {
-            unhighlightFeature(highlightedFeatureRef.current);
-        }
-        if (layer.setStyle) {
-            const feature = layer.feature;
-            let highlightStyle = {
-                weight: 5,
-                color: '#666',
-                dashArray: '',
-                fillOpacity: 0.7
-            };
-
-            if (feature && feature.geometry.type === 'LineString') {
-                if (feature.properties.type === 'flowerBed') {
-                  highlightStyle.color = '#FF1493'; // Deep pink for highlighted flower beds
-                } else {
-                  // Existing trail highlight logic
-                  const trailColor = (feature.properties.blaze && isValidColor(feature.properties.blaze))
-                    ? feature.properties.blaze
-                    : (feature.properties.color || '#3388ff');
-                  highlightStyle.color = trailColor;
-                }
-              }
-
-            layer.setStyle(highlightStyle);
-        }
-        if (layer.bringToFront) {
-            layer.bringToFront();
-        }
-        highlightedFeatureRef.current = layer;
-    };
-
-    /**
-     * Removes highlight from a feature
-     * @param {L.Layer} layer - The Leaflet layer to unhighlight
-     */
-    const unhighlightFeature = (layer) => {
-        if (layer.setStyle) {
-            layer.setStyle(styleFunction(layer.feature));
-        }
-    };
-
-    /**
-     * Handles click events on features
-     * @param {L.MouseEvent} e - The Leaflet mouse event
-     */
-    const handleFeatureClick = useCallback((e) => {
-        const layer = e.target;
-        console.log('Feature clicked:', layer);
-        highlightFeature(layer);
-
-        const selectEvent = new CustomEvent('featureSelected', {
-            detail: {
-                featureType: layer.feature.geometry.type,
-                featureData: layer.feature,
-                layer: layer
-            }
-        });
-        window.dispatchEvent(selectEvent);
-
-        e.originalEvent._stopped = true;
-    }, []);
-
-    /**
-     * Updates the geometry of a feature after editing
-     * @param {L.Layer} layer - The Leaflet layer that was edited
-     */
-    const updateFeatureGeometry = useCallback((layer) => {
-        if (layer.feature && layer.toGeoJSON) {
-            const updatedGeometry = layer.toGeoJSON().geometry;
-            layer.feature.geometry = updatedGeometry;
-            console.log('Updated feature geometry:', updatedGeometry);
-        }
-    }, []);
-
-    /**
-     * Saves all features to localStorage
-     */
-    const saveFeaturesToLocalStorage = useCallback(() => {
-        const features = {};
-        Object.entries(layerGroupsRef.current).forEach(([layerId, layerGroup]) => {
-            features[layerId] = [];
-            layerGroup.eachLayer((layer) => {
-                if (layer.feature) {
-                    features[layerId].push(layer.feature);
-                }
             });
-        });
-        localStorage.setItem('mapFeatures', JSON.stringify(features));
-    }, []);
+        }
+    }, [addLayerListeners]);
 
-    /**
-     * Adds event listeners to a layer
-     * @param {L.Layer} layer - The Leaflet layer to add listeners to
-     */
-    const addLayerListeners = useCallback((layer) => {
-        layer.on({
-            'pm:update': (e) => {
-                console.log('Layer edit ended:', e.layer);
-                updateFeatureGeometry(e.layer);
-                saveFeaturesToLocalStorage();
-            },
-            'pm:dragend': (e) => {
-                console.log('Layer drag ended:', e.layer);
-                updateFeatureGeometry(e.layer);
-                saveFeaturesToLocalStorage();
-            },
-            'click': handleFeatureClick
-        });
-    }, [handleFeatureClick, updateFeatureGeometry, saveFeaturesToLocalStorage]);
+    const disableEditingForLayer = useCallback((layerId) => {
+        const layerGroup = layerGroupsRef.current[layerId];
+        if (layerGroup) {
+            layerGroup.eachLayer(layer => {
+                if (layer.pm) {
+                    layer.pm.disable();
+                }
+                removeLayerListeners(layer);
+            });
+        }
+        if (highlightedFeatureRef.current) {
+            unhighlightFeature({ target: highlightedFeatureRef.current });
+        }
+    }, [removeLayerListeners, unhighlightFeature]);
 
-    // Effect Hooks
-
-    // Initialize Geoman and set up event listeners
     useEffect(() => {
         console.log('Initializing Geoman');
 
-        // Set Geoman options
         map.pm.setGlobalOptions({
             layerGroup: undefined,
             snappable: true,
             snapDistance: 20,
         });
 
-        // Add Geoman controls
-        map.pm.addControls({
-            position: 'topleft',
-            drawCircle: false,
-            drawCircleMarker: false,
-            drawText: false
-        });
-
-        // Handle feature creation
-        map.on('pm:create', (e) => {
-            console.log('Shape created:', e.layer);
-            if (!e.layer.feature) {
-                e.layer.feature = {
-                    type: 'Feature',
-                    properties: {},
-                    geometry: e.layer.toGeoJSON().geometry
-                };
+        map.pm.Toolbar.setButtonDisabled('editMode', false);
+        map.pm.Toolbar.changeActionsOfControl('editMode', [
+            {
+                text: 'Enable Edit Mode',
+                onClick: () => {
+                    if (selectedEditLayer) {
+                        enableEditingForLayer(selectedEditLayer);
+                    }
+                }
             }
-            addLayerListeners(e.layer);
-            saveFeaturesToLocalStorage();
-        });
+        ]);
 
-        // Handle feature removal
-        map.on('pm:remove', (e) => {
-            saveFeaturesToLocalStorage();
-        });
+        layers.forEach(layer => {
+            let layerGroup = layerGroupsRef.current[layer.id];
 
-        // Load saved features from localStorage
-        const savedFeatures = localStorage.getItem('mapFeatures');
-        if (savedFeatures) {
-            try {
-                const parsedFeatures = JSON.parse(savedFeatures);
-                Object.entries(parsedFeatures).forEach(([layerId, features]) => {
-                    const layerGroup = createGeoJSONLayer(features).addTo(map);
-                    layerGroupsRef.current[layerId] = layerGroup;
+            if (!layerGroup) {
+                layerGroup = L.layerGroup();
+                layerGroupsRef.current[layer.id] = layerGroup;
+            }
+
+            layerGroup.addTo(map);
+            layerGroup.clearLayers();
+
+            if (layer.active && layer.data) {
+                const geoJSONLayer = createGeoJSONLayer(layer.data);
+                geoJSONLayer.addTo(layerGroup);
+
+                geoJSONLayer.eachLayer(subLayer => {
+                    if (subLayer.pm) {
+                        subLayer.pm.disable();
+                    }
                 });
-            } catch (error) {
-                console.error('Error parsing saved features:', error);
             }
-        }
+        });
 
-        // Handle map clicks (for deselecting features)
-        map.on('click', (e) => {
+        /*
+        const handleMapClick = (e) => {
             if (!e.originalEvent._stopped) {
                 if (highlightedFeatureRef.current) {
-                    unhighlightFeature(highlightedFeatureRef.current);
-                    highlightedFeatureRef.current = null;
-
+                    unhighlightFeature({ target: highlightedFeatureRef.current });
                     const deselectEvent = new CustomEvent('featureDeselected');
                     window.dispatchEvent(deselectEvent);
                 }
             }
-        });
+        };*/
 
-        // Handle feature updates
-        const handleFeatureUpdate = (e) => {
-            const { layer } = e.detail;
-            if (layer.feature) {
-                if (layer.setStyle) {
-                    layer.setStyle(styleFunction(layer.feature));
-                }
-            }
-            console.log("Trying to save feature from handleFeatureUpdate:", e);
-            saveFeaturesToLocalStorage();
-        };
+        // map.on('click', handleMapClick);
 
-        window.addEventListener('featureUpdated', handleFeatureUpdate);
-
-        // Cleanup function
         return () => {
+            console.log('Cleaning up Geoman');
             map.pm.removeControls();
-            map.off('pm:create');
-            map.off('pm:remove');
-            map.off('click');
-
+            // map.off('click', handleMapClick);
             Object.values(layerGroupsRef.current).forEach(layerGroup => {
                 layerGroup.eachLayer((layer) => {
-                    layer.off('pm:update');
-                    layer.off('pm:dragend');
-                    layer.off('click', handleFeatureClick);
+                    removeLayerListeners(layer);
                 });
                 map.removeLayer(layerGroup);
             });
-
-            window.removeEventListener('featureUpdated', handleFeatureUpdate);
         };
-    }, [map, handleFeatureClick, addLayerListeners, saveFeaturesToLocalStorage]);
+    }, [map, layers, createGeoJSONLayer, enableEditingForLayer, unhighlightFeature, removeLayerListeners]);
 
-    // Handle changes to the layers prop
     useEffect(() => {
-        // Remove existing layers
-        Object.values(layerGroupsRef.current).forEach(layerGroup => {
-            map.removeLayer(layerGroup);
-        });
-        layerGroupsRef.current = {};
-
-        // Add new layers
-        layers.forEach(layer => {
-            if (layer.active && layer.data) {
-                const layerGroup = createGeoJSONLayer(layer.data).addTo(map);
-                layerGroupsRef.current[layer.id] = layerGroup;
+        Object.keys(layerGroupsRef.current).forEach(layerId => {
+            if (layerId === selectedEditLayer) {
+                enableEditingForLayer(layerId);
+            } else {
+                disableEditingForLayer(layerId);
             }
         });
-
-        saveFeaturesToLocalStorage();
-    }, [layers, map, addLayerListeners, saveFeaturesToLocalStorage]);
+    }, [selectedEditLayer, enableEditingForLayer, disableEditingForLayer]);
 
     return null;
 };
