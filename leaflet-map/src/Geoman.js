@@ -1,143 +1,32 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 
-const Geoman = ({ layers, selectedEditLayer }) => {
+const Geoman = ({
+    layers,
+    selectedEditLayerRef,
+    layerGroupsRef,
+    isEditingRef,
+    styleFunction,
+    addLayerListeners,
+    removeLayerListeners
+}) => {
     const map = useMap();
-    const layerGroupsRef = useRef({});
-    const highlightedFeatureRef = useRef(null);
+    const [selectedEditLayerState, setSelectedEditLayerState] = useState(selectedEditLayerRef.current);
 
-    const isValidColor = useCallback((color) => {
-        if (!color || typeof color !== 'string') return false;
-        const s = new Option().style;
-        s.color = color;
-        return s.color !== '';
-    }, []);
-
-    const styleFunction = useCallback((feature) => {
-        const baseStyle = {
-            weight: 1.5,
-            opacity: 0.7,
-            color: feature.properties.color || '#3388ff',
-            fillOpacity: 0.15
+    // Synchronize the state variable with the ref
+    useEffect(() => {
+        const syncSelectedEditLayer = () => {
+            setSelectedEditLayerState(selectedEditLayerRef.current);
         };
+        const interval = setInterval(syncSelectedEditLayer, 10);
 
-        switch (feature.geometry.type) {
-            case 'Polygon':
-                return {
-                    ...baseStyle,
-                    fillColor: feature.properties.color || '#3388ff',
-                };
-            case 'LineString':
-                if (feature.properties.type === 'flowerBed') {
-                    return {
-                        ...baseStyle,
-                        color: feature.properties.color || '#FF69B4',
-                        weight: 2,
-                        opacity: 0.6,
-                        dashArray: '5, 5'
-                    };
-                }
-                let trailColor = baseStyle.color;
-                if (feature.properties.blaze && isValidColor(feature.properties.blaze)) {
-                    trailColor = feature.properties.blaze;
-                }
-                return {
-                    ...baseStyle,
-                    weight: 2,
-                    color: trailColor,
-                    opacity: 0.8
-                };
-            case 'Point':
-                return {
-                    ...baseStyle,
-                    radius: 4,
-                    fillColor: feature.properties.color || '#3388ff',
-                    color: "#000",
-                    weight: 1,
-                    opacity: 0.7,
-                    fillOpacity: 0.4
-                };
-            default:
-                return baseStyle;
-        }
-    }, [isValidColor]);
-
-    const highlightFeature = useCallback((e) => {
-        console.log("Highlighting feature:", e);
-        const layer = e.layer;
-        try {
-            if (layer.setStyle) {
-                layer.setStyle({
-                    weight: 3,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.5,
-                    opacity: 1
-                });
-            } else {
-                console.log("Can't set style for:", layer);
-            }
-            if (layer.bringToFront) {
-                layer.bringToFront();
-            }
-            highlightedFeatureRef.current = layer;
-        } catch (error) {
-            console.error('Error highlighting feature:', error);
-        }
-    }, []);
-
-    const unhighlightFeature = useCallback((e) => {
-        console.log("Unhighlighting feature:", e);
-        const layer = e.layer || highlightedFeatureRef.current;
-        if (!layer) return;
-        try {
-            if (layer.feature) {
-                layer.setStyle(styleFunction(layer.feature));
-            }
-            highlightedFeatureRef.current = null;
-        } catch (error) {
-            console.error('Error unhighlighting feature:', error);
-        }
-    }, [styleFunction]);
-
-    const handleFeatureClick = useCallback((e) => {
-        try {
-            const layer = e.layer;
-            console.log("Handling feature click:", layer);
-            if (highlightedFeatureRef.current && highlightedFeatureRef.current !== layer) {
-                unhighlightFeature({ target: highlightedFeatureRef.current });
-            }
-            highlightFeature(e);
-
-            const selectEvent = new CustomEvent('featureSelected', {
-                detail: {
-                    featureType: layer.feature.geometry.type,
-                    featureData: layer.feature,
-                    layer: layer,
-                    layerId: layer.feature.geometry.type // FIX THIS!!!
-                } 
-            });
-            console.log("dispatching event:", selectEvent);
-            window.dispatchEvent(selectEvent);
-        } catch (error) {
-            console.error('Error handling feature click:', error);
-        }
-    }, [highlightFeature, unhighlightFeature]);
-
-    const addLayerListeners = useCallback((layer) => {
-        layer.on({
-            click: handleFeatureClick
-        });
-    }, [handleFeatureClick]);
-
-    const removeLayerListeners = useCallback((layer) => {
-        layer.off({
-            click: handleFeatureClick
-        });
-    }, [handleFeatureClick]);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [selectedEditLayerRef]);
 
     const createGeoJSONLayer = useCallback((data) => {
         return L.geoJSON(data, {
@@ -148,35 +37,11 @@ const Geoman = ({ layers, selectedEditLayer }) => {
         });
     }, [styleFunction]);
 
-    const enableEditingForLayer = useCallback((layerId) => {
-        const layerGroup = layerGroupsRef.current[layerId];
-        if (layerGroup) {
-            layerGroup.eachLayer(layer => {
-                if (layer.pm) {
-                    layer.pm.enable({limitMarkersToCount: 20});
-                }
-                addLayerListeners(layer);
-            });
-        }
-    }, [addLayerListeners]);
-
-    const disableEditingForLayer = useCallback((layerId) => {
-        const layerGroup = layerGroupsRef.current[layerId];
-        if (layerGroup) {
-            layerGroup.eachLayer(layer => {
-                if (layer.pm) {
-                    layer.pm.disable();
-                }
-                removeLayerListeners(layer);
-            });
-        }
-        if (highlightedFeatureRef.current) {
-            unhighlightFeature({ target: highlightedFeatureRef.current });
-        }
-    }, [removeLayerListeners, unhighlightFeature]);
-
     useEffect(() => {
         console.log('Initializing Geoman');
+
+        map.options.minZoom = 13;
+        map.options.maxZoom = 21;
 
         map.pm.setGlobalOptions({
             layerGroup: undefined,
@@ -184,76 +49,174 @@ const Geoman = ({ layers, selectedEditLayer }) => {
             snapDistance: 20,
         });
 
-        map.pm.Toolbar.setButtonDisabled('editMode', false);
-        map.pm.Toolbar.changeActionsOfControl('editMode', [
-            {
-                text: 'Enable Edit Mode',
-                onClick: () => {
-                    if (selectedEditLayer) {
-                        enableEditingForLayer(selectedEditLayer);
-                    }
-                }
-            }
-        ]);
-
         layers.forEach(layer => {
             let layerGroup = layerGroupsRef.current[layer.id];
 
+            // initialize layerGroup if it never has been
             if (!layerGroup) {
                 layerGroup = L.layerGroup();
                 layerGroupsRef.current[layer.id] = layerGroup;
             }
 
-            layerGroup.addTo(map);
-            layerGroup.clearLayers();
-
-            if (layer.active && layer.data) {
+            // add layers from dataset if layerGroup is empty
+            if (layer.data && layerGroup.getLayers().length === 0) {
                 const geoJSONLayer = createGeoJSONLayer(layer.data);
-                geoJSONLayer.addTo(layerGroup);
 
+                // add layers individually for more precise control
                 geoJSONLayer.eachLayer(subLayer => {
-                    if (subLayer.pm) {
-                        subLayer.pm.disable();
-                    }
-                });
+                    subLayer.addTo(layerGroup);
+                })
             }
-        });
 
-        /*
-        const handleMapClick = (e) => {
-            if (!e.originalEvent._stopped) {
-                if (highlightedFeatureRef.current) {
-                    unhighlightFeature({ target: highlightedFeatureRef.current });
-                    const deselectEvent = new CustomEvent('featureDeselected');
-                    window.dispatchEvent(deselectEvent);
+            // console.log("selectedEditLayer (Geoman useEffect):", selectedEditLayerRef.current);
+            // add it to the map if it's active
+            if (layer.active) {
+                layerGroup.addTo(map);
+
+                // add highlight feature listeners if selected for editing
+                if (selectedEditLayerRef.current && selectedEditLayerRef.current.id == layer.id) {
+                    console.log("adding listeners with layer.id:", layer.id);
+                    layerGroup.eachLayer(subLayer => {
+                        addLayerListeners(subLayer);
+                    });
+
+                    if (isEditingRef.current) {
+                        layerGroup.pm.enable({ limitMarkersToCount: (layer.editFeatureCount ?? 5) });
+                    }
                 }
             }
-        };*/
-
-        // map.on('click', handleMapClick);
+        });
 
         return () => {
             console.log('Cleaning up Geoman');
             map.pm.removeControls();
-            // map.off('click', handleMapClick);
             Object.values(layerGroupsRef.current).forEach(layerGroup => {
-                layerGroup.eachLayer((layer) => {
+                layerGroup.pm.disable(); // disable editing
+                // remove all listeners to be safe
+                layerGroup.eachLayer(layer => {
                     removeLayerListeners(layer);
                 });
+                // console.log("removing layer group:", layerGroup);
                 map.removeLayer(layerGroup);
             });
         };
-    }, [map, layers, createGeoJSONLayer, enableEditingForLayer, unhighlightFeature, removeLayerListeners]);
+    }, [map, layers, createGeoJSONLayer, addLayerListeners, removeLayerListeners, selectedEditLayerState]); // Add selectedEditLayerState to dependencies
+
+    // Function to handle editing state changes directly
+    const handleEdit = useCallback(() => {
+        // console.log("handleEdit called");
+        // console.log("selectedEditLayer:", selectedEditLayerRef.current);
+        // console.log("isEditing:", isEditingRef.current);
+        // console.log("layerGroupsRef:", layerGroupsRef.current);
+
+        if (selectedEditLayerRef.current) {
+            const layerGroup = layerGroupsRef.current[selectedEditLayerRef.current.id];
+            // console.log("handling edit for layerGroup:", layerGroup);
+
+            if (layerGroup) {
+                if (!isEditingRef.current) {
+                    console.log("enabling edits");
+                    layerGroup.pm.enable({ limitMarkersToCount: (selectedEditLayerRef.current.editFeatureCount ?? 5) });
+                    isEditingRef.current = true; // Directly set isEditingRef
+                } else {
+                    console.log("disabling edits");
+                    layerGroup.eachLayer(layer => {
+                        if (layer.pm) {
+                            layer.pm.disable();
+                        }
+                    });
+                    layerGroup.pm.disable();
+                    isEditingRef.current = false; // Directly set isEditingRef
+                }
+            }
+        } else {
+            console.log("selectedEditLayerRef.current is falsy");
+        }
+    }, [layerGroupsRef]);
+
+    // Function to check if a control already exists
+    const controlExists = (controlName) => {
+        return map.pm.Toolbar.getButtons()[controlName] !== undefined;
+    };
 
     useEffect(() => {
-        Object.keys(layerGroupsRef.current).forEach(layerId => {
-            if (layerId === selectedEditLayer) {
-                enableEditingForLayer(layerId);
-            } else {
-                disableEditingForLayer(layerId);
-            }
+        console.log("modifying controls");
+
+        // First, add a blank toolbar
+        map.pm.addControls({
+            position: 'topleft',
+            order: 1,
+            drawMarker: false,
+            drawCircleMarker: false,
+            drawPolyline: false,
+            drawRectangle: false,
+            drawPolygon: false,
+            drawCircle: false,
+            rotateMode: false,
+            drawText: false,
+            editMode: false,
+            dragMode: false,
+            cutPolygon: false,
+            removalMode: false,
         });
-    }, [selectedEditLayer, enableEditingForLayer, disableEditingForLayer]);
+
+        // Enable specific controls based on the layers array
+        const controlsToEnable = {
+            drawMarker: false,
+            drawPolyline: false,
+            drawPolygon: false,
+            ligma: selectedEditLayerState ? true : false
+            // Add other controls as needed
+        };
+
+        switch (selectedEditLayerState?.id) {
+            case 'trees':
+                controlsToEnable.drawCircleMarker = true;
+                break;
+            case 'trails':
+                controlsToEnable.drawPolyline = true;
+                break;
+            case 'buildings':
+                controlsToEnable.drawPolygon = true;
+            case 'landscaping':
+                controlsToEnable.drawPolygon = true;
+                break;
+            // Add more cases as needed for other layer types
+        }
+
+        // Enable the required controls
+        map.pm.addControls({
+            ...controlsToEnable,
+            position: 'topleft',
+            order: 1
+        });
+
+        if (!controlExists('ligma')) {
+            // creates new actions
+            const actions = [
+                "cancel", // uses the default 'cancel' action
+                { text: "Custom text, no click" }, // creates a new action that has text, no click event
+                {
+                    text: "click me",
+                    onClick: () => {
+                        alert("🙋‍♂️");
+                    },
+                },
+            ];
+            map.pm.Toolbar.createCustomControl({
+                name: 'ligma',
+                block: 'edit',
+                title: 'balls',
+                className: 'leaflet-pm-icon-edit',
+                onClick: handleEdit,
+                actions: actions,
+                disableOtherButtons: true
+            });
+        } else {
+            console.log("ligma balls");
+        }
+
+    }, [map, layers, selectedEditLayerState]); // Add selectedEditLayerState to dependencies
 
     return null;
 };

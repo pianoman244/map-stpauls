@@ -67,7 +67,7 @@ const FeatureEditBox = () => {
           `;
 
           container.innerHTML = formHtml;
-          console.log("Inner HTML:", formHtml);
+          // // console.log("Inner HTML:", formHtml);
           const form = container.querySelector('form');
           form.addEventListener('submit', handleSubmit);
         };
@@ -83,7 +83,7 @@ const FeatureEditBox = () => {
             }
 
             formItems.forEach(item => {
-              console.log("reading item", item);
+              // // console.log("reading item", item);
               const value = container.querySelector(`#${item.id}`).value;
               selectedFeature.feature.properties[item.label] = value;
               if (item.id === 'color' && CSS.supports('color', value)) {
@@ -97,14 +97,14 @@ const FeatureEditBox = () => {
         };
 
         const handleFeatureSelect = (e) => {
-          console.log("FeatureEditBox caught:", e);
+          // console.log("FeatureEditBox caught:", e);
           selectedFeature = e.detail.layer;
           layerId = e.detail.layerId;
           renderForm();
         };
 
         const handleFeatureDeselect = () => {
-          console.log("FeatureEditBox caught deselect");
+          // console.log("FeatureEditBox caught deselect");
           container.innerHTML = container.innerHTML = `
           <h3>Edit Feature</h3>
           <p>No feature selected</p>
@@ -126,9 +126,9 @@ const FeatureEditBox = () => {
       }
     });
 
-    console.log("Creating EditControl");
+    // console.log("Creating EditControl");
     const editControl = new EditControl({ position: 'bottomright' });
-    console.log("Adding editControl to map:", editControl);
+    // console.log("Adding editControl to map:", editControl);
     editControl.addTo(map);
 
     return () => {
