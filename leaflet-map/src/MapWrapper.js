@@ -3,6 +3,8 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import Geoman from './Geoman';
 import LayerControl from './LayerControl';
 import PNGViewer from './PNGViewer';
+import MapboxLayerViewer from './MapboxLayerViewer';
+import MapboxTilesetViewer from './MapboxTilesetViewer';
 import InfoBox from './InfoBox';
 import FeatureEditBox from './FeatureEditBox';
 import CopyButton from './CopyButton';
@@ -60,6 +62,7 @@ const MapWrapper = () => {
   const layerGroupsRef = useRef({});
   const [currentBasemap, setCurrentBasemap] = useState('streets-v11');
   const [showSVGOverlay, setShowSVGOverlay] = useState(false);
+  const [showMapboxTileset, setShowMapboxTileset] = useState(false);
 
   const basemaps = [
     { id: 'streets-v11', name: 'Streets' },
@@ -89,7 +92,7 @@ const MapWrapper = () => {
   }, []);
 
   const highlightedFeatureRef = useRef(null);
-  
+
   const handleEditLayerSelect = useCallback((layer) => {
     selectedEditLayerRef.current = layer;
     handleLayerToggle(layer?.id, true);
@@ -109,7 +112,12 @@ const MapWrapper = () => {
     setShowSVGOverlay(!showSVGOverlay);
   };
 
-  
+  const handleMapboxTilesetToggle = () => {
+    console.log("toggling SVG overlay to:", !showMapboxTileset);
+    setShowMapboxTileset(!showMapboxTileset);
+  };
+
+
 
   const isValidColor = useCallback((color) => {
     if (!color || typeof color !== 'string') return false;
@@ -205,7 +213,7 @@ const MapWrapper = () => {
     console.log("handling feature click with e:", e);
     const layer = e.target.feature ? e.target : e.layer; // idk this works
     console.log("highlightedFeatureRef.current !== layer:", highlightedFeatureRef.current !== layer);
-    
+
     try {
       if (highlightedFeatureRef.current !== layer) {
         unhighlightFeature({ target: highlightedFeatureRef.current });
@@ -279,11 +287,20 @@ const MapWrapper = () => {
           currentBasemap={currentBasemap}
           onBasemapChange={handleBasemapChange}
           showSVGOverlay={showSVGOverlay}
+          showMapboxTileset={showMapboxTileset}
           onSVGOverlayToggle={handleSVGOverlayToggle}
+          onMapboxTilesetToggle={handleMapboxTilesetToggle}
           isEditingRef={isEditingRef}
           selectedEditLayerRef={selectedEditLayerRef}
         />
         {showSVGOverlay && <PNGViewer />}
+        {showMapboxTileset && (
+          <MapboxTilesetViewer
+            accessToken={mapboxgl.accessToken}
+            tilesetId="pianoman24.7psob3qm"
+          />
+        )}
+
         <InfoBox />
         <FeatureEditBox />
         <CopyButton

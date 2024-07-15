@@ -49,7 +49,7 @@ const Geoman = ({
         map.pm.setGlobalOptions({
             layerGroup: undefined,
             snappable: true,
-            snapDistance: 20,
+            snapDistance: 5
         });
 
         layers.forEach(layer => {

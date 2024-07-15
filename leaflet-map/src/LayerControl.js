@@ -9,7 +9,9 @@ const LayerControl = ({
   currentBasemap,
   onBasemapChange,
   showSVGOverlay,
+  showMapboxTileset,
   onSVGOverlayToggle,
+  onMapboxTilesetToggle,
   isEditingRef,
   selectedEditLayerRef
 }) => {
@@ -87,6 +89,17 @@ const LayerControl = ({
           onSVGOverlayToggle();
         });
 
+        // Mapbox Tileset toggle
+        const mapboxLabel = L.DomUtil.create('label', 'mapbox-tileset-label', rightColumn);
+        const mapboxCheckbox = L.DomUtil.create('input', '', mapboxLabel);
+        mapboxCheckbox.type = 'checkbox';
+        mapboxCheckbox.checked = showMapboxTileset;
+        L.DomUtil.create('span', '', mapboxLabel).innerHTML = ' Mapbox Tileset';
+
+        L.DomEvent.on(mapboxCheckbox, 'change', function() {
+          onMapboxTilesetToggle();
+        });
+
         return container;
       }
     });
@@ -97,7 +110,7 @@ const LayerControl = ({
     return () => {
       map.removeControl(layerControl);
     };
-  }, [map, layers, onLayerToggle, basemaps, currentBasemap, onBasemapChange, showSVGOverlay, onSVGOverlayToggle, isEditingState, selectedEditLayerRef]);
+  }, [map, layers, onLayerToggle, basemaps, currentBasemap, onBasemapChange, showSVGOverlay, onSVGOverlayToggle, showMapboxTileset, isEditingState, selectedEditLayerRef]);
 
   return null;
 };
