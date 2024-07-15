@@ -2,33 +2,57 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import Geoman from './Geoman';
 import LayerControl from './LayerControl';
+import PNGViewer from './PNGViewer';
 import InfoBox from './InfoBox';
 import FeatureEditBox from './FeatureEditBox';
-import DownloadButton from './DownloadButton';
+import CopyButton from './CopyButton';
 import UploadButton from './UploadButton';
+import SaveButton from './SaveButton';
 import ClearFeaturesButton from './ClearFeaturesButton';
 import EditLayerSelector from './EditLayerSelector';
-import CustomEditingControls from './CustomEditingControls';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
-// Import GeoJSON data
-import landscapingData from './data/landscaping.json';
-import treesData from './data/trees.json';
-import trailsData from './data/trails.json';
-import buildingsData from './data/buildings.json';
-import flowerBedsData from './data/flower_beds.json';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicGlhbm9tYW4yNCIsImEiOiJjbHhjYjRnNHQwOWttMnFvbjlzc2Z2bXkwIn0.mOh5fw5vP2zvcN2Go09w8A';
 
 const MapWrapper = () => {
   const [layers, setLayers] = useState([
-    { id: 'landscaping', name: 'Zones', active: true, data: landscapingData, editFeatureCount: 8 },
-    { id: 'trees', name: 'Trees', active: false, data: treesData },
-    { id: 'trails', name: 'Trails', active: false, data: trailsData, editFeatureCount: 12 },
-    { id: 'buildings', name: 'Buildings', active: false, data: buildingsData, editFeatureCount: 5 },
-    { id: 'flowerBeds', name: 'Flowers', active: false, data: flowerBedsData, editFeatureCount: 5 },
+    { id: 'landscaping', name: 'Zones', active: true, editFeatureCount: 8 },
+    { id: 'trees', name: 'Trees', active: false },
+    { id: 'trails', name: 'Trails', active: false, editFeatureCount: 12 },
+    { id: 'buildings', name: 'Buildings', active: false, editFeatureCount: 5 },
+    { id: 'flowerBeds', name: 'Flowers', active: false, editFeatureCount: 5 },
   ]);
+
+  const [layerData, setLayerData] = useState({});
+
+  const fetchLayerData = useCallback(async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3001/get-layer-data/${id}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching layer data:', error);
+      return null;
+    }
+  }, []);
+
+  useEffect(() => {
+    const loadAllLayerData = async () => {
+      const newLayerData = {};
+      for (const layer of layers) {
+        const data = await fetchLayerData(layer.id);
+        if (data) {
+          newLayerData[layer.id] = data;
+        }
+      }
+      setLayerData(newLayerData);
+    };
+
+    loadAllLayerData();
+  }, [fetchLayerData]);
 
   const selectedEditLayerRef = useRef(layers[0]);
   const isEditingRef = useRef(false);
@@ -64,6 +88,8 @@ const MapWrapper = () => {
     );
   }, []);
 
+  const highlightedFeatureRef = useRef(null);
+  
   const handleEditLayerSelect = useCallback((layer) => {
     selectedEditLayerRef.current = layer;
     handleLayerToggle(layer?.id, true);
@@ -79,10 +105,11 @@ const MapWrapper = () => {
   };
 
   const handleSVGOverlayToggle = () => {
+    console.log("toggling SVG overlay to:", !showSVGOverlay);
     setShowSVGOverlay(!showSVGOverlay);
   };
 
-  const highlightedFeatureRef = useRef(null);
+  
 
   const isValidColor = useCallback((color) => {
     if (!color || typeof color !== 'string') return false;
@@ -175,24 +202,34 @@ const MapWrapper = () => {
   }, [styleFunction]);
 
   const handleFeatureClick = useCallback((e) => {
+    console.log("handling feature click with e:", e);
+    const layer = e.target.feature ? e.target : e.layer; // idk this works
+    console.log("highlightedFeatureRef.current !== layer:", highlightedFeatureRef.current !== layer);
+    
     try {
-      const layer = e.target;
-      if (highlightedFeatureRef.current && highlightedFeatureRef.current !== layer) {
+      if (highlightedFeatureRef.current !== layer) {
         unhighlightFeature({ target: highlightedFeatureRef.current });
-      }
-      highlightFeature(e);
+        highlightFeature(e);
 
-      const selectEvent = new CustomEvent('featureSelected', {
-        detail: {
-          featureType: layer.feature.geometry.type,
-          featureData: layer.feature,
-          layer: layer,
-          layerId: layer.feature.geometry.type
-        }
-      });
-      window.dispatchEvent(selectEvent);
+        const selectEvent = new CustomEvent('featureSelected', {
+          detail: {
+            featureType: layer.feature.geometry.type,
+            featureData: layer.feature,
+            layer: layer,
+            layerId: layer.feature.geometry.type
+          }
+        });
+        window.dispatchEvent(selectEvent);
+      } else {
+        unhighlightFeature({ target: highlightedFeatureRef.current });
+        console.log("dispatching deselectEvent");
+        const deselectEvent = new CustomEvent('featureDeselected');
+        window.dispatchEvent(deselectEvent);
+      }
+
     } catch (error) {
       console.error('Error handling feature click:', error);
+      console.log("error with layer:", layer);
     }
   }, [highlightFeature, unhighlightFeature]);
 
@@ -215,7 +252,7 @@ const MapWrapper = () => {
         zoom={15.5}
         style={{ height: '100%', width: '100%' }}
         scrollWheelZoom={true}
-        doubleClickZoom={true}
+        doubleClickZoom={false}
         zoomControl={false}
       >
         <TileLayer
@@ -225,12 +262,15 @@ const MapWrapper = () => {
         />
         <Geoman
           layers={layers}
+          layerData={layerData}
           selectedEditLayerRef={selectedEditLayerRef}
           layerGroupsRef={layerGroupsRef}
           isEditingRef={isEditingRef}
           styleFunction={styleFunction}
           addLayerListeners={addLayerListeners}
           removeLayerListeners={removeLayerListeners}
+          unhighlightFeature={unhighlightFeature}
+          highlightedFeatureRef={highlightedFeatureRef}
         />
         <LayerControl
           layers={layers}
@@ -243,10 +283,17 @@ const MapWrapper = () => {
           isEditingRef={isEditingRef}
           selectedEditLayerRef={selectedEditLayerRef}
         />
+        {showSVGOverlay && <PNGViewer />}
         <InfoBox />
         <FeatureEditBox />
-        <UploadButton />
-        <DownloadButton />
+        <CopyButton
+          selectedEditLayerRef={selectedEditLayerRef}
+          layerGroupsRef={layerGroupsRef}
+        />
+        <SaveButton
+          selectedEditLayerRef={selectedEditLayerRef}
+          layerGroupsRef={layerGroupsRef}
+        />
         <EditLayerSelector
           layers={layers}
           selectedEditLayerRef={selectedEditLayerRef}

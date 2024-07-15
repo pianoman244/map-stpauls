@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 
-const FeatureEditBox = () => {
+const FeatureEditBox = ({highlightedFeatureState}) => {
   const map = useMap();
 
   useEffect(() => {
@@ -35,6 +35,9 @@ const FeatureEditBox = () => {
       `).join('');
     };
 
+    const layerId = highlightedFeatureState?.current.layer.id;
+    const selectedFeature = highlightedFeatureState?.current.layer.feature;
+
     const getFormItems = (layerId) => formConfig[layerId] || formConfig.default;
 
     const EditControl = L.Control.extend({
@@ -45,9 +48,6 @@ const FeatureEditBox = () => {
         container.style.margin = '10px';
         container.style.maxWidth = '300px';
         container.style.display = 'none';
-
-        let selectedFeature = null;
-        let layerId = null;
 
         const renderForm = () => {
           if (!selectedFeature) {
@@ -113,18 +113,10 @@ const FeatureEditBox = () => {
           renderForm();
         };
 
-        window.addEventListener('featureSelected', handleFeatureSelect);
-        window.addEventListener('featureDeselected', handleFeatureDeselect);
-
-        this.onRemove = () => {
-          window.removeEventListener('featureSelected', handleFeatureSelect);
-          window.removeEventListener('featureDeselected', handleFeatureDeselect);
-        };
-
         L.DomEvent.disableClickPropagation(container);
         return container;
       }
-    });
+    }, [highlightedFeatureState]);
 
     // console.log("Creating EditControl");
     const editControl = new EditControl({ position: 'bottomright' });

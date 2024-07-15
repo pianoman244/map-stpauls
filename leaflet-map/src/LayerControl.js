@@ -41,12 +41,13 @@ const LayerControl = ({
           L.DomUtil.create('span', '', label).innerHTML = ` ${layer.name}`;
 
           // Disable checkbox if it's the selected layer and in edit mode
-          if (isEditingState && layer.id === selectedEditLayerRef.current?.id) {
+          if (layer.id === selectedEditLayerRef.current?.id) {
             checkbox.disabled = true;
             checkbox.checked = true;
             label.style.opacity = '0.5';
           } else {
             L.DomEvent.on(checkbox, 'change', function () {
+              console.log("logging layer change with layer:", layer);
               onLayerToggle(layer.id, this.checked);
             });
           }
