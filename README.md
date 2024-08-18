@@ -7,3 +7,5 @@ A demo of what "maps.sps.edu" could look like, with an embedded Mapbox map. The 
 To view the page, just clone the repository and open index.html in a browser. To ensure Mapbox can access the datasets, run cors_server.py from a terminal. This will start a simple server on localhost port 8000 so Mapbox has a URL to access the sources. 
 
 There are no package managers involved here. All the Mapbox JS is imported in script tags directly in index.html.
+
+This folder is entirely self-contained (except for cors_server.py). You don't need to worry about any other code in this repository to run the demo. It's intentionally simple to keep the focus on the Mapbox code. Everything in this folder except for `index.html`, `css/maps.css`, and `maps/main.js` (along with the source data in `maps/data`) is copied from the SPS website to clone the site.
