@@ -1,11 +1,15 @@
 # map-stpauls
-The beginnings of the Millville Atlas Project. This repository contains demos with Mapbox, Leaflet, and React I created to test out different mapping tools during my 2024 fellowship with St. Paul's School.
+This repository contains an interactive Mapbox map and lightweight web-based GIS data editor I created during my 2024 fellowship with St. Paul's School (SPS). The Mapbox map was a simple prototype using SPS datasets to demonstrate the tool's capabilities to the graphic design team. I created the GIS data editor to help me digitize some information about landscaper-planted campus trees, previously stored in a PDF with static maps, as well as some other landscaping data. 
+
+The Leaflet-based editor is more built out. My main technical task at the fellowship was digitizing their static maps of campus trees and trails, and I built this editor to do it. The editing features come from a JavaScript library called Geoman. 
 
 ## admissions-clone
-A demo of what "maps.sps.edu" could look like, with an embedded Mapbox map. The HTML/CSS is from the SPS Admissions page (https://www.sps.edu/admissions), and I wrote all the Mapbox code in app.js. The HTML elements overlaid on the map are added in index.html and updated throughout app.js. 
+The interactive Mapbox map is here, embedded within a demo of what "maps.sps.edu" could look like. The HTML/CSS is from the SPS Admissions page (https://www.sps.edu/admissions), and all the Mapbox code is in app.js. There are no package managers; the Mapbox code is imported directly with script tags. The HTML elements overlaid on the map are all directly inside index.html (and updated dynamically in app.js). 
 
-To view the page, just clone the repository and open index.html in a browser. To ensure Mapbox can access the datasets, run cors_server.py from a terminal. This will start a simple server on localhost port 8000 so Mapbox has a URL to access the sources. 
+It has all campus trees, trails, buildings, and "landscaping zones". Keep in mind that this was a simple demo created in a week without prior Mapbox knowledge, intended to show basic functionality. 
+* Currently each building is assigned a random year from SPS's founding to now, and the slider hides buildings newer than the selected date. Someone could eventually match each building with its actual construction date for an interesting animation.
+* Yes, a layer selector and caption would make this more comprehensible to someone not in the room where I was presenting this demo.
 
-There are no package managers involved here. All the Mapbox JS is imported in script tags directly in index.html.
+It's deployed in a GitHub page in this repo: https://pianoman244.github.io/map-stpauls/admissions_clone/index.html
 
-This folder is entirely self-contained (except for cors_server.py). You don't need to worry about any other code in this repository to run the demo. It's intentionally simple to keep the focus on the Mapbox code. Everything in this folder except for `index.html`, `css/maps.css`, and `maps/main.js` (along with the source data in `maps/data`) is copied from the SPS website to clone the site.
+To run the page yourself, clone the repository and open index.html in a browser. To ensure Mapbox can access the datasets, run cors_server.py in the root of the repository from a terminal. This will start a simple server on localhost port 8000 so Mapbox has a URL to access the sources. The datasets are stored in `backend/data`.
